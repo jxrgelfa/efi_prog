@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perfil de Emprendimiento — FeriaZone</title>
-  
+  <title>Feriando Ando — FeriaZone</title>
+  <meta name="description" content="Accesorios hechos a mano con piedras naturales y mucho amor en FeriaZone Río Cuarto.">
+
+  <!-- Script anti-parpadeo FOUC -->
   <script>
     (function() {
       try {
@@ -21,18 +23,85 @@
 
   <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-accent selection:text-white">
+<body class="min-h-screen flex flex-col justify-between selection:bg-accent selection:text-white transition-colors">
 
-  <div id="navbar-placeholder"></div>
+  <!-- ============================================== -->
+  <!-- BARRA DE NAVEGACIÓN SUPERIOR (FIGMA SCREEN 2)  -->
+  <!-- Botón Volver SVG < | Logo Centrado | Opciones  -->
+  <!-- ============================================== -->
+  <header id="emprendimiento-header" class="sticky top-0 z-40 backdrop-blur-md border-b border-black/5 dark:border-white/10 px-4 py-2.5 sm:py-3 transition-colors">
+    <div class="max-w-4xl mx-auto flex items-center justify-between">
+      
+      <!-- Botón Volver con Icono SVG (0 emojis) -->
+      <a 
+        href="javascript:history.length > 1 ? history.back() : window.location.href='../index.html'" 
+        class="w-10 h-10 rounded-full bg-black/80 hover:bg-black text-white flex items-center justify-center transition-transform active:scale-95 shadow-xs"
+        aria-label="Volver atrás"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </a>
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow w-full space-y-12">
-    <div id="merchant-container">
-      <p class="text-center text-ink-muted">Cargando perfil del emprendedor...</p>
+      <!-- Logo Central FeriaZone -->
+      <a href="../index.html" class="flex items-center justify-center group" aria-label="Ir al inicio">
+        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden bg-white dark:bg-slate-800 border-2 border-sand/40 shadow-xs group-hover:scale-105 transition-transform p-0.5">
+          <img 
+            src="../imagenes/logo.png" 
+            alt="Logo FeriaZone" 
+            class="w-full h-full object-cover rounded-full"
+            onerror="this.onerror=null; this.src='../images/logo.png';"
+          >
+        </div>
+      </a>
+
+      <!-- Acciones Derecha: Carrito y Menú Opciones SVG -->
+      <div class="flex items-center space-x-2">
+        <!-- Carrito con Badge Reactivo -->
+        <a 
+          href="./carrito.html" 
+          class="relative w-10 h-10 rounded-full bg-white/70 dark:bg-slate-800/70 hover:bg-white text-ink dark:text-white flex items-center justify-center transition-colors shadow-2xs"
+          aria-label="Ver carrito"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+          </svg>
+          <span id="nav-cart-badge" class="hidden absolute -top-1 -right-1 bg-accent text-white font-bold text-[10px] rounded-full w-4 h-4 flex items-center justify-center shadow-xs">
+            0
+          </span>
+        </a>
+
+        <!-- Botón Opciones SVG (...) -->
+        <button 
+          id="btn-options-menu" 
+          type="button"
+          class="w-10 h-10 rounded-full bg-black/80 hover:bg-black text-white flex items-center justify-center transition-transform active:scale-95 shadow-xs cursor-pointer"
+          aria-label="Más opciones"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <circle cx="5" cy="12" r="1.8"></circle>
+            <circle cx="12" cy="12" r="1.8"></circle>
+            <circle cx="19" cy="12" r="1.8"></circle>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ============================================== -->
+  <!-- CONTENEDOR PRINCIPAL DEL EMPRENDIMIENTO (FIGMA) -->
+  <!-- ============================================== -->
+  <main class="flex-grow w-full">
+    <div id="merchant-container" class="w-full">
+      <!-- Renderizado dinámico vía emprendimiento.js -->
     </div>
   </main>
 
+  <!-- Footer inyectado -->
   <div id="footer-placeholder"></div>
 
+  <!-- Script modular de la página -->
   <script type="module" src="../js/pages/emprendimiento.js"></script>
 </body>
 </html>

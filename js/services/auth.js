@@ -46,6 +46,35 @@ class AuthService {
     return { success: false, error: `Usuario demo para rol "${role}" no encontrado` };
   }
 
+  /**
+   * Registro de nuevo usuario y sesión automática
+   */
+  register(userData) {
+    const role = userData.role || 'usuario';
+    const roleNames = {
+      usuario: 'Vecino Comprador',
+      feriante: 'Feriante Productor',
+      organizador: 'Organizador de Ferias'
+    };
+
+    const newUser = {
+      id: 'usr-' + Date.now(),
+      name: userData.name || roleNames[role] || 'Usuario FeriaZone',
+      email: userData.email || `${role}_${Date.now().toString().slice(-4)}@feriazone.com.ar`,
+      role: role,
+      phone: userData.phone || '+54 9 358 456-7890',
+      avatar: role === 'usuario' 
+        ? 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=300&q=80' 
+        : role === 'feriante'
+        ? 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80'
+        : 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80'
+    };
+
+    this.currentUser = newUser;
+    storage.set(AUTH_USER_KEY, newUser);
+    return { success: true, user: newUser };
+  }
+
   logout() {
     this.currentUser = null;
     storage.remove(AUTH_USER_KEY);

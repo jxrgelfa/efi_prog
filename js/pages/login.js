@@ -54,4 +54,15 @@ document.addEventListener('DOMContentLoaded', () => {
       showToast('Correo no registrado en la demo. Usá los botones de acceso rápido.', 'error');
     }
   });
+
+  // Olvidaste tu contraseña
+  document.getElementById('forgot-pass-btn')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('login-email').value;
+    if (email) {
+      showToast(`Enlace de restablecimiento enviado a ${email}`, 'info');
+    } else {
+      showToast('Ingresá tu correo arriba para recuperar el acceso.', 'info');
+    }
+  });
 });

@@ -1,8 +1,8 @@
-import { renderNavbar } from '../../components/navbar.js';
-import { renderFooter } from '../../components/footer.js';
-import { auth } from '../../services/auth.js';
-import { dataService } from '../../services/dataService.js';
-import { showToast } from '../../components/toast.js';
+import { renderNavbar } from '../components/navbar.js';
+import { renderFooter } from '../components/footer.js';
+import { auth } from '../services/auth.js';
+import { dataService } from '../services/dataService.js';
+import { showToast } from '../components/toast.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   if (!auth.requireAuth(['organizador'], '../login.html')) return;

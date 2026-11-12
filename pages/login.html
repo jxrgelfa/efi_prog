@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Iniciar Sesión — FeriaZone</title>
-  
+  <meta name="description" content="Accedé a tu cuenta en FeriaZone para conectar con ferias, productos artesanales y feriantes de Río Cuarto.">
+
+  <!-- Script anti-parpadeo FOUC -->
   <script>
     (function() {
       try {
@@ -21,92 +23,177 @@
 
   <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-accent selection:text-white">
+<body class="min-h-screen flex flex-col justify-between selection:bg-accent selection:text-white bg-[#E5EEF3] dark:bg-[#151D24] text-ink dark:text-white transition-colors">
 
+  <!-- Navbar inyectada -->
   <div id="navbar-placeholder"></div>
 
-  <main class="max-w-xl mx-auto px-4 sm:px-6 py-12 flex-grow w-full space-y-8">
-    
-    <div class="text-center space-y-2">
-      <div class="w-16 h-16 rounded-2xl bg-primary text-white flex items-center justify-center text-3xl mx-auto shadow-md">
-        🎪
-      </div>
-      <h1 class="text-3xl font-black text-ink dark:text-white font-heading">
-        Ingresar a FeriaZone
-      </h1>
-      <p class="text-xs text-ink-muted dark:text-slate-300">
-        Iniciá sesión o elegí un perfil demostrativo para evaluar el proyecto.
-      </p>
-    </div>
+  <!-- Contenedor Principal (Mobile-First y Centrado en Desktop) -->
+  <main class="flex-grow flex items-center justify-center px-4 py-8 sm:py-12">
+    <div class="w-full max-w-md mx-auto space-y-6 sm:space-y-8">
+      
+      <!-- ============================================== -->
+      <!-- LOGO SUPERIOR Y SELECTOR DE PESTAÑAS (FIGMA)   -->
+      <!-- ============================================== -->
+      <div class="flex flex-col items-center space-y-5 text-center">
+        <!-- Logo Circular -->
+        <a href="../index.html" class="inline-block group" aria-label="Volver al inicio">
+          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden bg-white dark:bg-slate-800 border-2 border-sand/50 shadow-md group-hover:scale-105 transition-transform p-0.5">
+            <img 
+              src="../imagenes/logo.png" 
+              alt="Logo FeriaZone" 
+              class="w-full h-full object-cover rounded-full"
+              onerror="this.onerror=null; this.src='../images/logo.png';"
+            >
+          </div>
+        </a>
 
-    <!-- BOTONES DE ACCESO RÁPIDO DEMO -->
-    <div class="card-surface p-6 border border-accent/40 space-y-4 bg-accent/5">
-      <div class="text-center">
-        <span class="text-xs font-bold uppercase tracking-wider text-accent block">Evaluación de Cátedra</span>
-        <h3 class="text-base font-bold text-ink dark:text-white">Acceso Rápido Demo (1 Clic)</h3>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-        <button id="demo-user-btn" class="btn-primary text-xs py-3 px-2 flex flex-col items-center gap-1 text-center shadow-xs">
-          <span class="text-lg">🛍️</span>
-          <span class="font-bold">Vecino</span>
-          <span class="text-[10px] opacity-80">Comprador</span>
-        </button>
-
-        <button id="demo-merchant-btn" class="btn-accent text-xs py-3 px-2 flex flex-col items-center gap-1 text-center shadow-xs">
-          <span class="text-lg">🛠️</span>
-          <span class="font-bold">Feriante</span>
-          <span class="text-[10px] opacity-80">Emprendedor</span>
-        </button>
-
-        <button id="demo-org-btn" class="btn-outline bg-white dark:bg-slate-800 text-xs py-3 px-2 flex flex-col items-center gap-1 text-center shadow-xs">
-          <span class="text-lg">📋</span>
-          <span class="font-bold">Organizador</span>
-          <span class="text-[10px] opacity-80">Administrador</span>
-        </button>
-      </div>
-    </div>
-
-    <!-- FORMULARIO CONVENCIONAL -->
-    <div class="card-surface p-6 sm:p-8 space-y-6 border border-sand/40">
-      <form id="login-form" class="space-y-4">
-        <div>
-          <label for="login-email" class="block text-xs font-bold text-ink dark:text-white mb-1">Correo Electrónico</label>
-          <input 
-            type="email" 
-            id="login-email" 
-            required 
-            placeholder="ejemplo@feriazone.com.ar"
-            class="w-full px-4 py-2.5 rounded-xl border border-sand/60 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm text-ink dark:text-white"
-          >
+        <!-- Pestañas Segmentadas: Iniciar Sesión / Registrarse -->
+        <div class="inline-flex items-center p-1 rounded-full bg-[#5C8296] dark:bg-slate-800 shadow-inner">
+          <a href="./login.html" class="px-5 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-bold bg-[#DCE8F0] text-ink shadow-xs transition-all">
+            Iniciar Sesion
+          </a>
+          <a href="./registro.html" class="px-5 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-medium text-white/90 hover:text-white transition-all">
+            Registrarse
+          </a>
         </div>
+      </div>
 
-        <div>
-          <label for="login-pass" class="block text-xs font-bold text-ink dark:text-white mb-1">Contraseña</label>
-          <input 
-            type="password" 
-            id="login-pass" 
-            required 
-            placeholder="••••••••"
-            class="w-full px-4 py-2.5 rounded-xl border border-sand/60 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm text-ink dark:text-white"
-          >
-        </div>
-
-        <button type="submit" class="btn-accent w-full py-3 text-sm font-bold shadow-md">
-          Entrar a mi cuenta
-        </button>
-      </form>
-
-      <div class="text-center pt-2 border-t border-sand/30 dark:border-slate-700">
-        <p class="text-xs text-ink-muted dark:text-slate-400">
-          ¿No tenés cuenta todavía? 
-          <a href="./registro.html" class="text-accent font-bold hover:underline">Registrate acá</a>
+      <!-- ============================================== -->
+      <!-- ENCABEZADO DE SALUDO                           -->
+      <!-- ============================================== -->
+      <div class="text-left space-y-1">
+        <h1 class="text-2xl sm:text-3xl font-black text-[#3D6675] dark:text-[#9EC3D5] font-heading tracking-tight">
+          ¡Hola de nuevo!
+        </h1>
+        <p class="text-xs sm:text-sm text-ink-muted dark:text-slate-300">
+          Ingresá para seguir descubriendo ferias locales.
         </p>
       </div>
-    </div>
 
+      <!-- ============================================== -->
+      <!-- FORMULARIO DE ACCESO (ESTILO MINIMALISTA FIGMA)-->
+      <!-- ============================================== -->
+      <form id="login-form" class="space-y-5">
+        
+        <!-- Campo: Correo Electrónico con icono SVG -->
+        <div class="space-y-1">
+          <div class="relative flex items-center border-b border-slate-300 dark:border-slate-700 focus-within:border-[#4E7B8C] transition-colors py-2">
+            <input 
+              type="email" 
+              id="login-email" 
+              required 
+              placeholder="Correo Electronico"
+              class="w-full pr-8 bg-transparent text-sm sm:text-base text-ink dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none"
+            >
+            <div class="absolute right-1 text-slate-400 dark:text-slate-500 pointer-events-none">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Campo: Contraseña con icono SVG -->
+        <div class="space-y-1">
+          <div class="relative flex items-center border-b border-slate-300 dark:border-slate-700 focus-within:border-[#4E7B8C] transition-colors py-2">
+            <input 
+              type="password" 
+              id="login-pass" 
+              required 
+              placeholder="Contrasena"
+              class="w-full pr-8 bg-transparent text-sm sm:text-base text-ink dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none"
+            >
+            <div class="absolute right-1 text-slate-400 dark:text-slate-500 pointer-events-none">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Enlace: ¿Olvidaste tu contraseña? -->
+        <div class="text-right pt-1">
+          <a href="#" id="forgot-pass-btn" class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 hover:text-[#4E7B8C] dark:hover:text-sand-light transition-colors">
+            ¿Olvidaste tu contraseña?
+          </a>
+        </div>
+
+        <!-- Botón Principal: Ingresar -->
+        <div class="pt-3">
+          <button 
+            type="submit" 
+            class="w-full py-3.5 px-6 rounded-2xl sm:rounded-full bg-[#4E7B8C] hover:bg-[#3D6675] text-white font-bold text-base sm:text-lg shadow-md active:scale-[0.98] transition-all cursor-pointer"
+          >
+            Ingresar
+          </button>
+        </div>
+      </form>
+
+      <!-- ============================================== -->
+      <!-- EVALUACIÓN DE CÁTEDRA: ACCESO RÁPIDO DEMO      -->
+      <!-- Botones para ingresar como Vecino, Feriante u  -->
+      <!-- Organizador en 1 clic sin fricción            -->
+      <!-- ============================================== -->
+      <div class="pt-6 border-t border-slate-300/80 dark:border-slate-800 space-y-3">
+        <div class="text-center">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+            Acceso Rápido para Evaluación Demo
+          </span>
+        </div>
+
+        <div class="grid grid-cols-3 gap-2 sm:gap-3">
+          <!-- Demo Vecino -->
+          <button 
+            id="demo-user-btn" 
+            type="button"
+            class="p-2.5 rounded-xl bg-white/70 dark:bg-slate-800/70 border border-slate-300 dark:border-slate-700 hover:border-[#4E7B8C] hover:bg-white flex flex-col items-center gap-1.5 transition-all text-center shadow-2xs group"
+          >
+            <div class="w-8 h-8 rounded-full bg-[#4E7B8C]/15 text-[#4E7B8C] flex items-center justify-center group-hover:scale-110 transition-transform">
+              <!-- SVG Bolsa de compras -->
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+              </svg>
+            </div>
+            <span class="text-xs font-bold text-ink dark:text-white">Vecino</span>
+          </button>
+
+          <!-- Demo Feriante -->
+          <button 
+            id="demo-merchant-btn" 
+            type="button"
+            class="p-2.5 rounded-xl bg-white/70 dark:bg-slate-800/70 border border-slate-300 dark:border-slate-700 hover:border-[#4E7B8C] hover:bg-white flex flex-col items-center gap-1.5 transition-all text-center shadow-2xs group"
+          >
+            <div class="w-8 h-8 rounded-full bg-accent/15 text-accent flex items-center justify-center group-hover:scale-110 transition-transform">
+              <!-- SVG Puesto Ferial -->
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18l-2 9H5L3 3zm0 9l2 9h14l2-9M9 21V12m6 9V12"></path>
+              </svg>
+            </div>
+            <span class="text-xs font-bold text-ink dark:text-white">Feriante</span>
+          </button>
+
+          <!-- Demo Organizador -->
+          <button 
+            id="demo-org-btn" 
+            type="button"
+            class="p-2.5 rounded-xl bg-white/70 dark:bg-slate-800/70 border border-slate-300 dark:border-slate-700 hover:border-[#4E7B8C] hover:bg-white flex flex-col items-center gap-1.5 transition-all text-center shadow-2xs group"
+          >
+            <div class="w-8 h-8 rounded-full bg-sand-dark/20 text-ink dark:text-sand-light flex items-center justify-center group-hover:scale-110 transition-transform">
+              <!-- SVG Credencial/Portapapeles -->
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+              </svg>
+            </div>
+            <span class="text-xs font-bold text-ink dark:text-white">Organizador</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
   </main>
 
+  <!-- Footer inyectado -->
   <div id="footer-placeholder"></div>
 
   <script type="module" src="../js/pages/login.js"></script>

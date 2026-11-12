@@ -1,10 +1,10 @@
-import { renderNavbar } from '../../components/navbar.js';
-import { renderFooter } from '../../components/footer.js';
-import { auth } from '../../services/auth.js';
-import { dataService } from '../../services/dataService.js';
-import { PROMOTION_PACKAGES, ACTIVE_PROMOTIONS } from '../../data/promotions.js';
-import { formatCurrency } from '../../utils/formatters.js';
-import { showToast } from '../../components/toast.js';
+import { renderNavbar } from '../components/navbar.js';
+import { renderFooter } from '../components/footer.js';
+import { auth } from '../services/auth.js';
+import { dataService } from '../services/dataService.js';
+import { PROMOTION_PACKAGES, ACTIVE_PROMOTIONS } from '../data/promotions.js';
+import { formatCurrency } from '../utils/formatters.js';
+import { showToast } from '../components/toast.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   if (!auth.requireAuth(['feriante'], '../login.html')) return;
@@ -18,11 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Render promociones activas
   if (ACTIVE_PROMOTIONS.length > 0) {
     activeContainer.innerHTML = ACTIVE_PROMOTIONS.map(p => `
-      <div class="p-4 rounded-2xl bg-cream dark:bg-slate-800/60 border border-sand/30 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div class="p-4 rounded-2xl bg-[#E5EEF3] dark:bg-slate-800/60 border border-sand/30 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div class="space-y-1">
           <div class="flex items-center gap-2">
             <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-accent text-white uppercase">Activa</span>
-            <span class="font-bold text-sm text-ink dark:text-white">Paquete: ${p.packageId}</span>
+            <span class="font-bold text-sm text-[#3D6675] dark:text-[#9EC3D5] font-heading">Paquete: ${p.packageId}</span>
           </div>
           <p class="text-xs text-ink-muted dark:text-slate-400">Vigencia: ${p.startDate} al ${p.endDate} · <strong>${p.daysRemaining} días restantes</strong></p>
         </div>
@@ -48,11 +48,18 @@ document.addEventListener('DOMContentLoaded', () => {
     <article class="card-surface p-6 flex flex-col justify-between border border-sand/40 hover:shadow-lg transition-all space-y-6">
       <div class="space-y-3">
         <span class="text-xs font-bold text-accent uppercase tracking-wider block">Paquete de Visibilidad</span>
-        <h3 class="text-xl font-black text-ink dark:text-white font-heading">${pkg.name}</h3>
+        <h3 class="text-xl font-black text-[#3D6675] dark:text-[#9EC3D5] font-heading">${pkg.name}</h3>
         <p class="text-xs text-ink-muted dark:text-slate-300 leading-relaxed">${pkg.tagline}</p>
         
         <ul class="space-y-2 text-xs text-ink dark:text-slate-200 pt-2 border-t border-sand/20">
-          ${pkg.features.map(f => `<li class="flex items-center gap-1.5"><span class="text-accent font-bold">✓</span> <span>${f}</span></li>`).join('')}
+          ${pkg.features.map(f => `
+            <li class="flex items-center gap-2">
+              <svg class="w-3.5 h-3.5 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>${f}</span>
+            </li>
+          `).join('')}
         </ul>
       </div>
 
@@ -62,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
           ${pkg.durations.map(d => `<option value="${d.days}" data-price="${d.price}">${d.days} días — ${formatCurrency(d.price)}</option>`).join('')}
         </select>
 
-        <button data-pkg="${pkg.name}" class="hire-promo-btn btn-accent w-full text-xs py-2.5 font-bold shadow-sm">
+        <button data-pkg="${pkg.name}" class="hire-promo-btn btn-accent w-full text-xs py-2.5 font-bold shadow-sm cursor-pointer">
           Contratar Paquete (Simulado)
         </button>
       </div>
@@ -76,7 +83,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const days = select.value;
       const price = select.selectedOptions[0].getAttribute('data-price');
 
-      btn.textContent = '✓ Contratado';
+      btn.innerHTML = `
+        <span class="inline-flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <span>Contratado</span>
+        </span>
+      `;
       btn.disabled = true;
       btn.classList.replace('btn-accent', 'btn-outline');
 

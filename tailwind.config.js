@@ -10,14 +10,14 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#3F4E63',
-          dark: '#2D3847',
-          light: '#53657E'
+          DEFAULT: '#4E7B8C',
+          dark: '#3D6675',
+          light: '#6B96A8'
         },
         accent: {
-          DEFAULT: '#B8654A',
-          hover: '#9E533C',
-          light: '#D38066'
+          DEFAULT: '#E05A2B',
+          hover: '#C4471B',
+          light: '#F27A52'
         },
         sand: {
           DEFAULT: '#D4BC94',
@@ -25,8 +25,9 @@ export default {
           dark: '#BCA073'
         },
         cream: {
-          DEFAULT: '#F5EFE6',
-          dark: '#EAE1D2'
+          DEFAULT: '#E5EEF3',
+          light: '#F0F5F8',
+          dark: '#D6E4ED'
         },
         ink: {
           DEFAULT: '#1F2733',

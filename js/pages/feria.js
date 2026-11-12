@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!fair) {
     container.innerHTML = `
       <div class="card-surface p-12 text-center space-y-4 max-w-xl mx-auto">
-        <h2 class="text-2xl font-bold text-ink dark:text-white">Feria no encontrada</h2>
+        <h2 class="text-2xl font-bold text-[#3D6675] dark:text-[#9EC3D5] font-heading">Feria no encontrada</h2>
         <a href="./ferias.html" class="btn-accent inline-block">Volver a ferias</a>
       </div>
     `;
@@ -37,8 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
           <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-accent">
             ${fair.zone}
           </span>
-          <h1 class="text-2xl sm:text-4xl font-black font-heading">${fair.name}</h1>
-          <p class="text-sm text-sand-light">${fair.tagline}</p>
+          <h1 class="text-2xl sm:text-4xl font-black font-heading text-white !text-white">${fair.name}</h1>
+          <p class="text-sm text-white/90 drop-shadow-sm">${fair.tagline}</p>
         </div>
       </div>
 
@@ -65,16 +65,19 @@ document.addEventListener('DOMContentLoaded', () => {
       <!-- Descripción y servicios -->
       <div class="px-6 pb-6 sm:px-8 sm:pb-8 space-y-4 border-t border-sand/20 pt-4">
         <div>
-          <h3 class="text-sm font-bold text-ink dark:text-white uppercase tracking-wider mb-2">Sobre esta feria</h3>
+          <h3 class="text-sm font-bold text-[#3D6675] dark:text-[#9EC3D5] font-heading uppercase tracking-wider mb-2">Sobre esta feria</h3>
           <p class="text-sm text-ink-muted dark:text-slate-300 leading-relaxed">${fair.description}</p>
         </div>
 
         <div>
-          <h3 class="text-xs font-bold text-ink dark:text-white uppercase tracking-wider mb-2">Servicios disponibles</h3>
+          <h3 class="text-xs font-bold text-[#3D6675] dark:text-[#9EC3D5] font-heading uppercase tracking-wider mb-2">Servicios disponibles</h3>
           <div class="flex flex-wrap gap-2">
             ${fair.services.map(s => `
-              <span class="px-3 py-1 rounded-xl bg-sand/30 dark:bg-slate-800 text-xs text-ink dark:text-sand-light font-medium">
-                ✓ ${s}
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-sand/30 dark:bg-slate-800 text-xs text-ink dark:text-sand-light font-medium">
+                <svg class="w-3.5 h-3.5 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>${s}</span>
               </span>
             `).join('')}
           </div>
@@ -84,14 +87,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     <!-- MAPA LEAFLET DE LA FERIA -->
     <div class="mt-8 card-surface p-6 space-y-4 border border-sand/40">
-      <h3 class="text-xl font-bold text-ink dark:text-white font-heading">Ubicación en el Mapa</h3>
+      <h3 class="text-xl font-bold text-[#3D6675] dark:text-[#9EC3D5] font-heading">Ubicación en el Mapa</h3>
       <div id="fair-single-map" class="h-72 sm:h-96 rounded-2xl overflow-hidden z-10 border border-sand/30"></div>
     </div>
 
     <!-- EMPRENDEDORES PRESENTES -->
     <section class="mt-12 space-y-6">
       <div>
-        <h3 class="text-2xl font-bold text-ink dark:text-white font-heading">
+        <h3 class="text-2xl font-bold text-[#3D6675] dark:text-[#9EC3D5] font-heading">
           Emprendedores inscriptos en esta feria (${merchantsInFair.length})
         </h3>
         <p class="text-xs text-ink-muted dark:text-slate-400">Puestos y artesanos que podés encontrar en este espacio.</p>
@@ -102,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="card-surface p-4 flex items-center space-x-3 border border-sand/30">
             <img src="${m.avatar}" alt="${m.name}" class="w-12 h-12 rounded-xl object-cover border border-sand">
             <div class="flex-grow">
-              <h4 class="font-bold text-sm text-ink dark:text-white leading-tight">${m.name}</h4>
+              <h4 class="font-bold text-sm text-[#3D6675] dark:text-[#9EC3D5] font-heading leading-tight">${m.name}</h4>
               <span class="text-xs text-accent">${m.category}</span>
               <a href="./emprendimiento.html?id=${m.id}" class="text-[11px] text-primary dark:text-sand-light hover:underline block mt-1">Ver productos →</a>
             </div>
@@ -113,13 +116,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     <!-- RESEÑAS DE LA FERIA -->
     <section class="mt-12 space-y-6">
-      <h3 class="text-2xl font-bold text-ink dark:text-white font-heading">Reseñas del evento</h3>
+      <h3 class="text-2xl font-bold text-[#3D6675] dark:text-[#9EC3D5] font-heading">Reseñas del evento</h3>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         ${fairReviews.map(r => `
           <div class="card-surface p-4 space-y-2 border border-sand/30">
             <div class="flex items-center justify-between">
               <span class="font-bold text-sm text-ink dark:text-white">${r.author}</span>
-              <span class="text-xs text-accent font-bold">★ ${r.rating} / 5</span>
+              <span class="inline-flex items-center gap-1 text-xs text-accent font-bold">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                </svg>
+                <span>${r.rating} / 5</span>
+              </span>
             </div>
             <p class="text-xs text-ink-muted dark:text-slate-300 leading-relaxed">${r.comment}</p>
             <span class="text-[10px] text-ink-light dark:text-slate-400 block">${formatDate(r.date)}</span>

@@ -1,11 +1,15 @@
 import { renderNavbar } from '../components/navbar.js';
 import { renderFooter } from '../components/footer.js';
+import { renderFeaturedMerchants } from '../components/featuredMerchants.js';
 import { dataService } from '../services/dataService.js';
 import { renderProductCard, attachAddToCartListeners } from '../components/productCard.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   renderNavbar();
   renderFooter();
+
+  // Renderizar Carrusel estilo Instagram Stories de Feriantes en la Tienda
+  renderFeaturedMerchants('featured-merchants-container');
 
   const allProducts = dataService.getProducts();
   const searchInput = document.getElementById('filter-search');
@@ -60,8 +64,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (filtered.length === 0) {
       gridContainer.innerHTML = `
         <div class="col-span-full card-surface p-12 text-center space-y-3">
-          <span class="text-4xl">🔍</span>
-          <h3 class="text-lg font-bold text-ink dark:text-white">No encontramos productos con esos filtros</h3>
+          <div class="w-16 h-16 rounded-2xl bg-sand/30 dark:bg-slate-800 text-[#4E7B8C] dark:text-[#9EC3D5] flex items-center justify-center mx-auto shadow-inner">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m1.85-5.65a7.5 7.5 0 11-15 0 7.5 7.5 0 0115 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-[#3D6675] dark:text-[#9EC3D5] font-heading">No encontramos productos con esos filtros</h3>
           <p class="text-sm text-ink-muted dark:text-slate-400">Probá modificando las palabras clave o seleccionando otra categoría.</p>
         </div>
       `;

@@ -14,6 +14,62 @@
  */
 
 export const PRODUCTS_DATA = [
+  {
+    id: 'prod-corazon-1',
+    merchantId: 'emp-feriando-ando',
+    merchantName: 'FeriandoAndo',
+    fairId: 'feria-1',
+    category: 'Joyería y Accesorios',
+    name: 'Conjunto Corazon',
+    price: 8000,
+    stock: 15,
+    isPromoted: true,
+    description: 'Conjunto artesanal con dije corazón de cuarzo rosa engarzado y cadena hipoalergénica de acero.',
+    image: 'imagenes/productos/conjunto_corazon.jpg',
+    tags: ['joyeria', 'accesorios', 'cuarzo', 'corazon']
+  },
+  {
+    id: 'prod-corazon-2',
+    merchantId: 'emp-feriando-ando',
+    merchantName: 'FeriandoAndo',
+    fairId: 'feria-1',
+    category: 'Joyería y Accesorios',
+    name: 'Conjunto Corazon',
+    price: 8000,
+    stock: 10,
+    isPromoted: true,
+    description: 'Conjunto artesanal con dije corazón de piedra natural pulida.',
+    image: 'imagenes/productos/conjunto_corazon.jpg',
+    tags: ['joyeria', 'accesorios', 'corazon']
+  },
+  {
+    id: 'prod-corazon-3',
+    merchantId: 'emp-feriando-ando',
+    merchantName: 'FeriandoAndo',
+    fairId: 'feria-1',
+    category: 'Joyería y Accesorios',
+    name: 'Conjunto Corazon',
+    price: 8000,
+    stock: 8,
+    isPromoted: true,
+    description: 'Conjunto artesanal con dije corazón y cadena de acero quirúrgico.',
+    image: 'imagenes/productos/conjunto_corazon.jpg',
+    tags: ['joyeria', 'accesorios', 'corazon']
+  },
+  {
+    id: 'prod-corazon-4',
+    merchantId: 'emp-feriando-ando',
+    merchantName: 'FeriandoAndo',
+    fairId: 'feria-1',
+    category: 'Joyería y Accesorios',
+    name: 'Conjunto Corazon',
+    price: 8000,
+    stock: 12,
+    isPromoted: true,
+    description: 'Conjunto artesanal con dije corazón de cuarzo y cadena.',
+    image: 'imagenes/productos/conjunto_corazon.jpg',
+    tags: ['joyeria', 'accesorios', 'corazon']
+  },
   // Emp-1: Mates del Imperio (feria-1)
   {
     id: 'prod-1',

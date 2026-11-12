@@ -4,6 +4,102 @@
  */
 export const MERCHANTS_DATA = [
   {
+    id: 'emp-feriando-ando',
+    name: 'Feriando Ando',
+    category: 'Accesorios y Joyería',
+    bio: 'Accesorios hechos a mano con piedras naturales y mucho amor.',
+    artisanName: 'Camila Rossi',
+    neighborhood: 'Banda Norte',
+    phone: '+54 9 358 412-3456',
+    instagram: '@feriandoando',
+    avatar: 'imagenes/feriantes/feriando_ando.jpg',
+    coverImage: 'imagenes/feriantes/feriando_ando_banner.jpg',
+    regularFairId: 'feria-1',
+    featured: true,
+    rating: 5.0,
+    reviewsCount: 48,
+    theme: {
+      bgBanner: '#FDF0DC', // Fondo crema cálido
+      bgBody: '#BFE0E2',   // Celeste/cyan pastel
+      headerBg: '#BFE0E2',
+      accent: '#3D6675',
+      textPrimary: '#1E2E38',
+      textMuted: '#2D4552'
+    }
+  },
+  {
+    id: 'emp-feria-root',
+    name: 'Feria Root',
+    category: 'Diseño e Indumentaria',
+    bio: 'Diseño independiente, indumentaria urbana y serigrafía artesanal.',
+    artisanName: 'Matías Gomez',
+    neighborhood: 'Centro',
+    phone: '+54 9 358 433-8899',
+    instagram: '@feria.root',
+    avatar: 'imagenes/feriantes/feria_root.jpg',
+    coverImage: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1000&q=80',
+    regularFairId: 'feria-2',
+    featured: true,
+    rating: 4.9,
+    reviewsCount: 35,
+    theme: {
+      bgBanner: '#111827', // Carbón oscuro urbano
+      bgBody: '#E5E7EB',   // Gris urbano suave
+      headerBg: '#E5E7EB',
+      accent: '#1F2937',
+      textPrimary: '#111827',
+      textMuted: '#374151'
+    }
+  },
+  {
+    id: 'emp-festival-chic',
+    name: 'Festival Chic',
+    category: 'Moda y Accesorios',
+    bio: 'Tendencias de autor, accesorios para eventos y complementos artesanales.',
+    artisanName: 'Sofía Álvarez',
+    neighborhood: 'Banda Norte',
+    phone: '+54 9 358 466-7711',
+    instagram: '@festivalchic',
+    avatar: 'imagenes/feriantes/festival_chic.jpg',
+    coverImage: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1000&q=80',
+    regularFairId: 'feria-1',
+    featured: true,
+    rating: 4.8,
+    reviewsCount: 29,
+    theme: {
+      bgBanner: '#FFF0F5', // Rosa muy tenue
+      bgBody: '#FAD2E1',   // Rosa pastel
+      headerBg: '#FAD2E1',
+      accent: '#DB2777',
+      textPrimary: '#831843',
+      textMuted: '#9D174D'
+    }
+  },
+  {
+    id: 'emp-croca-cafe',
+    name: 'Croca Cafe',
+    category: 'Café de Especialidad',
+    bio: 'Café de especialidad al paso y delicias dulces horneadas a la mañana.',
+    artisanName: 'Martín Cabrera',
+    neighborhood: 'Estación Andino',
+    phone: '+54 9 358 490-2211',
+    instagram: '@crocacafe',
+    avatar: 'imagenes/feriantes/croca_cafe.jpg',
+    coverImage: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=80',
+    regularFairId: 'feria-2',
+    featured: true,
+    rating: 5.0,
+    reviewsCount: 52,
+    theme: {
+      bgBanner: '#FAF4ED', // Crema café
+      bgBody: '#EADBCE',   // Beige latte cappuccino
+      headerBg: '#EADBCE',
+      accent: '#78350F',
+      textPrimary: '#451A03',
+      textMuted: '#78350F'
+    }
+  },
+  {
     id: 'emp-1',
     name: 'Mates del Imperio',
     category: 'Mates y Cuero',

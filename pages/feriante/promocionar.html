@@ -21,7 +21,7 @@
 
   <link rel="stylesheet" href="../../css/styles.css">
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-accent selection:text-white">
+<body class="min-h-screen flex flex-col justify-between selection:bg-accent selection:text-white bg-[#E5EEF3] dark:bg-[#151D24] text-ink dark:text-white transition-colors">
 
   <div id="navbar-placeholder"></div>
 
@@ -29,12 +29,23 @@
     
     <div class="border-b border-sand/30 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
       <div>
-        <a href="./index.html" class="text-xs text-accent font-bold hover:underline mb-1 inline-block">← Volver al Panel de Feriante</a>
-        <h1 class="text-3xl sm:text-4xl font-black text-ink dark:text-white font-heading">
+        <nav class="flex items-center gap-2 text-xs font-semibold text-ink-muted dark:text-slate-400 mb-2">
+          <a href="../../index.html" class="hover:text-accent flex items-center gap-1 transition-colors">
+            <svg class="w-3.5 h-3.5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+            </svg>
+            <span>Inicio</span>
+          </a>
+          <span class="text-sand-dark">/</span>
+          <a href="./index.html" class="hover:text-accent transition-colors">Panel de Feriante</a>
+          <span class="text-sand-dark">/</span>
+          <span class="text-ink dark:text-white">Promociones</span>
+        </nav>
+        <h1 class="text-3xl sm:text-4xl font-black text-[#3D6675] dark:text-[#9EC3D5] font-heading">
           Servicio de Promoción para Feriantes
         </h1>
         <p class="text-sm text-ink-muted dark:text-slate-300 mt-1">
-          Aumentá la visibilidad de tus productos artesanales en la Home, en el catálogo o en el mapa.
+          Aumentá la visibilidad de tus productos artesanales en la Home, en la Tienda o en el mapa.
         </p>
       </div>
 
@@ -45,7 +56,7 @@
 
     <!-- MIS PROMOCIONES ACTIVAS Y RESULTADOS -->
     <section class="card-surface p-6 sm:p-8 space-y-4 border border-sand/40">
-      <h2 class="text-xl font-bold text-ink dark:text-white font-heading">Mis Promociones Activas</h2>
+      <h2 class="text-xl font-bold text-[#3D6675] dark:text-[#9EC3D5] font-heading">Mis Promociones Activas</h2>
       <div id="active-promos-container" class="space-y-3">
         <!-- Inyección dinámica -->
       </div>
@@ -54,7 +65,7 @@
     <!-- CONTRATADOR DE NUEVA PROMOCIÓN -->
     <section class="space-y-6">
       <div>
-        <h2 class="text-2xl font-bold text-ink dark:text-white font-heading">Elegí tu Paquete de Impulso</h2>
+        <h2 class="text-2xl font-bold text-[#3D6675] dark:text-[#9EC3D5] font-heading">Elegí tu Paquete de Impulso</h2>
         <p class="text-xs text-ink-muted dark:text-slate-400">Seleccioná qué querés destacar y por cuántos días.</p>
       </div>
 

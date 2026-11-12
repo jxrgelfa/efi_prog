@@ -18,10 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!product) {
     container.innerHTML = `
       <div class="card-surface p-12 text-center space-y-4 max-w-xl mx-auto">
-        <span class="text-4xl">⚠️</span>
-        <h2 class="text-2xl font-bold text-ink dark:text-white">Producto no encontrado</h2>
+        <div class="w-16 h-16 rounded-2xl bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center justify-center mx-auto">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+          </svg>
+        </div>
+        <h2 class="text-2xl font-bold text-[#3D6675] dark:text-[#9EC3D5] font-heading">Producto no encontrado</h2>
         <p class="text-sm text-ink-muted dark:text-slate-300">El producto que estás buscando no existe o fue dado de baja por el feriante.</p>
-        <a href="./catalogo.html" class="btn-accent inline-block">Volver al catálogo</a>
+        <a href="./catalogo.html" class="btn-accent inline-block">Volver a la Tienda</a>
       </div>
     `;
     return;
@@ -42,9 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
     <nav class="flex items-center space-x-2 text-xs text-ink-light dark:text-slate-400 mb-6">
       <a href="../index.html" class="hover:text-accent">Inicio</a>
       <span>/</span>
-      <a href="./catalogo.html" class="hover:text-accent">Catálogo</a>
+      <a href="./catalogo.html" class="hover:text-accent">Tienda</a>
       <span>/</span>
-      <span class="text-ink dark:text-white font-medium truncate max-w-xs">${product.name}</span>
+      <span class="text-[#3D6675] dark:text-[#9EC3D5] font-medium truncate max-w-xs">${product.name}</span>
     </nav>
 
     <!-- Ficha Principal de Producto -->
@@ -55,8 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="relative rounded-3xl overflow-hidden bg-sand/20 border border-sand/40 dark:border-slate-800 shadow-md">
           <img src="${product.image}" alt="${product.name}" class="w-full h-80 sm:h-[450px] object-cover">
           ${product.isPromoted ? `
-            <span class="absolute top-4 left-4 bg-accent text-white font-bold text-xs px-3 py-1.5 rounded-full shadow-md">
-              ★ Producto Destacado
+            <span class="absolute top-4 left-4 bg-accent text-white font-bold text-xs px-3 py-1.5 rounded-full shadow-md inline-flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <span>Producto Destacado</span>
             </span>
           ` : ''}
         </div>
@@ -72,16 +79,19 @@ document.addEventListener('DOMContentLoaded', () => {
               ${product.category}
             </span>
             <span class="text-xs text-emerald-600 dark:text-emerald-400 font-bold flex items-center gap-1">
-              ✓ Stock disponible: ${product.stock} unidades
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Stock disponible: ${product.stock} unidades</span>
             </span>
           </div>
 
-          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-black text-ink dark:text-white font-heading leading-tight">
+          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-black text-[#3D6675] dark:text-[#9EC3D5] font-heading leading-tight">
             ${product.name}
           </h1>
 
           <!-- Precio -->
-          <div class="p-4 rounded-2xl bg-cream dark:bg-slate-800/80 border border-sand/30 flex items-center justify-between">
+          <div class="p-4 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-sand/30 flex items-center justify-between shadow-xs">
             <div>
               <span class="text-xs text-ink-light dark:text-slate-400 block font-medium">Precio en pesos</span>
               <span class="text-3xl font-extrabold text-accent font-heading">
@@ -93,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
           <!-- Descripción completa -->
           <div class="space-y-2">
-            <h3 class="text-sm font-bold text-ink dark:text-white uppercase tracking-wider">Descripción del producto</h3>
+            <h3 class="text-sm font-bold text-[#3D6675] dark:text-[#9EC3D5] font-heading uppercase tracking-wider">Descripción del producto</h3>
             <p class="text-sm sm:text-base text-ink-muted dark:text-slate-300 leading-relaxed">
               ${product.description}
             </p>
@@ -102,12 +112,12 @@ document.addEventListener('DOMContentLoaded', () => {
           <!-- Selector de cantidad y Botón Carrito -->
           <div class="pt-2 flex flex-col sm:flex-row items-center gap-3">
             <div class="flex items-center border border-sand/60 dark:border-slate-700 rounded-xl bg-white dark:bg-slate-800 p-1 w-full sm:w-36 justify-between">
-              <button id="qty-minus" class="w-10 h-10 flex items-center justify-center font-bold text-ink dark:text-white hover:bg-sand/30 rounded-lg text-lg">-</button>
+              <button id="qty-minus" class="w-10 h-10 flex items-center justify-center font-bold text-ink dark:text-white hover:bg-sand/30 rounded-lg text-lg cursor-pointer">-</button>
               <span id="qty-value" class="font-bold text-ink dark:text-white px-2">1</span>
-              <button id="qty-plus" class="w-10 h-10 flex items-center justify-center font-bold text-ink dark:text-white hover:bg-sand/30 rounded-lg text-lg">+</button>
+              <button id="qty-plus" class="w-10 h-10 flex items-center justify-center font-bold text-ink dark:text-white hover:bg-sand/30 rounded-lg text-lg cursor-pointer">+</button>
             </div>
 
-            <button id="detail-add-cart-btn" class="btn-accent w-full sm:flex-grow text-base py-3 shadow-md">
+            <button id="detail-add-cart-btn" class="btn-accent w-full sm:flex-grow text-base py-3 shadow-md cursor-pointer">
               Agregar al Carrito
             </button>
           </div>
@@ -115,7 +125,9 @@ document.addEventListener('DOMContentLoaded', () => {
           <!-- Botón de Contacto por WhatsApp -->
           <div>
             <a href="${whatsappUrl}" target="_blank" class="w-full inline-flex items-center justify-center min-h-[44px] px-5 py-3 rounded-xl font-bold text-white bg-emerald-600 hover:bg-emerald-700 transition-colors shadow-sm gap-2">
-              <span>💬</span>
+              <svg class="w-5 h-5 fill-current flex-shrink-0" viewBox="0 0 24 24">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.772.82 2.791.82 3.182 0 5.768-2.587 5.769-5.766.001-3.182-2.585-5.769-5.769-5.769zm3.39 8.163c-.143.404-.73.74-1.02.778-.29.038-.636.088-2.074-.509-1.724-.716-2.827-2.483-2.913-2.599-.086-.116-.7-1.018-.7-1.942 0-.924.475-1.381.65-1.571.175-.19.382-.238.51-.238.128 0 .257 0 .37.006.12.006.277-.046.434.331.157.377.538 1.312.585 1.408.047.095.078.209.016.333-.063.124-.094.201-.188.312-.094.111-.198.248-.282.333-.095.095-.194.199-.083.39.111.19.493.813 1.057 1.315.727.647 1.341.848 1.531.943.19.095.302.08.414-.047.112-.128.477-.557.604-.748.127-.19.255-.158.428-.095.174.064 1.103.52 1.293.616.19.095.318.143.365.222.047.08.047.461-.096.865z"/>
+              </svg>
               <span>Encargar directo al Feriante por WhatsApp</span>
             </a>
           </div>
@@ -129,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <img src="${merchant.avatar}" alt="${merchant.name}" class="w-12 h-12 rounded-xl object-cover border border-sand">
               <div>
                 <span class="text-xs text-ink-light dark:text-slate-400">Elaborado por</span>
-                <h4 class="font-bold text-sm text-ink dark:text-white font-heading">${merchant.name}</h4>
+                <h4 class="font-bold text-sm text-[#3D6675] dark:text-[#9EC3D5] font-heading">${merchant.name}</h4>
                 <p class="text-xs text-accent">${merchant.neighborhood}</p>
               </div>
             </div>
@@ -141,8 +153,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <!-- Feria de retiro habitual -->
         ${fair ? `
-          <div class="p-3.5 rounded-xl bg-sand/20 dark:bg-slate-800 text-xs text-ink dark:text-slate-300 flex items-center gap-2">
-            <span>🎪</span>
+          <div class="p-3.5 rounded-xl bg-white/70 dark:bg-slate-800 text-xs text-ink dark:text-slate-300 flex items-center gap-2 border border-sand/30">
+            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18l-2 9H5L3 3zm0 9l2 9h14l2-9M9 21V12m6 9V12"></path>
+            </svg>
             <span>Retiro habitual en: <strong>${fair.name}</strong> (${fair.schedule})</span>
           </div>
         ` : ''}
@@ -154,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <section class="mt-16 pt-12 border-t border-sand/30 dark:border-slate-800 space-y-6">
       <div class="flex items-center justify-between">
         <div>
-          <h3 class="text-2xl font-bold text-ink dark:text-white font-heading">Opiniones de compradores</h3>
+          <h3 class="text-2xl font-bold text-[#3D6675] dark:text-[#9EC3D5] font-heading">Opiniones de compradores</h3>
           <p class="text-xs text-ink-muted dark:text-slate-400">Reseñas de vecinos que ya probaron este producto.</p>
         </div>
       </div>
@@ -164,7 +178,12 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="card-surface p-4 space-y-2 border border-sand/30">
             <div class="flex items-center justify-between">
               <span class="font-bold text-sm text-ink dark:text-white">${r.author}</span>
-              <span class="text-xs text-accent font-bold">★ ${r.rating} / 5</span>
+              <span class="inline-flex items-center gap-1 text-xs text-accent font-bold">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                </svg>
+                <span>${r.rating} / 5</span>
+              </span>
             </div>
             <p class="text-xs text-ink-muted dark:text-slate-300 leading-relaxed">${r.comment}</p>
             <span class="text-[10px] text-ink-light dark:text-slate-400 block">${formatDate(r.date)}</span>

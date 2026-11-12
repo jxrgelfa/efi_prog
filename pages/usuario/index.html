@@ -21,33 +21,51 @@
 
   <link rel="stylesheet" href="../../css/styles.css">
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-accent selection:text-white">
+<body class="min-h-screen flex flex-col justify-between selection:bg-accent selection:text-white bg-[#E5EEF3] dark:bg-[#151D24] text-ink dark:text-white transition-colors">
 
   <div id="navbar-placeholder"></div>
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow w-full space-y-8">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow w-full space-y-6">
     
+    <!-- Breadcrumb de navegación rápida al Inicio -->
+    <nav class="flex items-center gap-2 text-xs font-semibold text-ink-muted dark:text-slate-400">
+      <a href="../../index.html" class="hover:text-accent flex items-center gap-1.5 transition-colors">
+        <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+        </svg>
+        <span>Inicio</span>
+      </a>
+      <span class="text-sand-dark">/</span>
+      <span class="text-ink dark:text-white">Panel del Vecino Comprador</span>
+    </nav>
+
     <!-- Header del Panel -->
     <div class="card-surface p-6 sm:p-8 border border-sand/40 flex flex-col sm:flex-row items-center justify-between gap-6">
       <div class="flex items-center space-x-4">
-        <img id="user-avatar" src="" alt="Usuario" class="w-16 h-16 rounded-2xl object-cover border-2 border-accent">
+        <img id="user-avatar" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=300&q=80" alt="Usuario" class="w-16 h-16 rounded-2xl object-cover border-2 border-accent shadow-sm">
         <div>
           <span class="text-xs font-bold text-accent uppercase tracking-wider">Panel del Vecino Comprador</span>
-          <h1 id="user-name" class="text-2xl sm:text-3xl font-black text-ink dark:text-white font-heading"></h1>
+          <h1 id="user-name" class="text-2xl sm:text-3xl font-black text-[#3D6675] dark:text-[#9EC3D5] font-heading"></h1>
           <p id="user-email" class="text-xs text-ink-muted dark:text-slate-400"></p>
         </div>
       </div>
 
-      <div class="flex gap-3">
-        <a href="../catalogo.html" class="btn-accent text-xs py-2.5 px-4">
-          Ir al Catálogo
+      <div class="flex flex-wrap gap-2.5">
+        <a href="../../index.html" class="btn-outline text-xs py-2.5 px-4 font-bold flex items-center gap-1.5 shadow-xs hover:border-accent hover:text-accent transition-all cursor-pointer">
+          <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+          </svg>
+          <span>Volver al Inicio</span>
+        </a>
+        <a href="../catalogo.html" class="btn-accent text-xs py-2.5 px-4 font-bold shadow-sm">
+          Ir a la Tienda
         </a>
       </div>
     </div>
 
     <!-- SECCIÓN: Historial de Pedidos -->
     <section class="space-y-4">
-      <h2 class="text-xl font-bold text-ink dark:text-white font-heading">
+      <h2 class="text-xl font-bold text-[#3D6675] dark:text-[#9EC3D5] font-heading">
         Mis Pedidos Realizados
       </h2>
       <div id="orders-list-container" class="space-y-3">
@@ -58,7 +76,7 @@
     <!-- SECCIÓN: Dejar Reseña -->
     <section class="card-surface p-6 sm:p-8 space-y-6 border border-sand/40 max-w-2xl">
       <div>
-        <h2 class="text-xl font-bold text-ink dark:text-white font-heading">
+        <h2 class="text-xl font-bold text-[#3D6675] dark:text-[#9EC3D5] font-heading">
           Dejar una Reseña de Producto o Feria
         </h2>
         <p class="text-xs text-ink-muted dark:text-slate-400 mt-1">
@@ -91,11 +109,11 @@
         <div>
           <label for="review-rating" class="block text-xs font-bold text-ink dark:text-white mb-1">Puntuación</label>
           <select id="review-rating" class="w-full px-4 py-2 rounded-xl border border-sand/60 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm">
-            <option value="5">★★★★★ (5 estrellas - Excelente)</option>
-            <option value="4">★★★★☆ (4 estrellas - Muy bueno)</option>
-            <option value="3">★★★☆☆ (3 estrellas - Bueno)</option>
-            <option value="2">★★☆☆☆ (2 estrellas - Regular)</option>
-            <option value="1">★☆☆☆☆ (1 estrella - Malo)</option>
+            <option value="5">5 estrellas — Excelente</option>
+            <option value="4">4 estrellas — Muy bueno</option>
+            <option value="3">3 estrellas — Bueno</option>
+            <option value="2">2 estrellas — Regular</option>
+            <option value="1">1 estrella — Malo</option>
           </select>
         </div>
 
@@ -104,7 +122,7 @@
           <textarea id="review-comment" rows="3" required placeholder="Contá qué te pareció la calidad, la atención y el producto..." class="w-full px-4 py-2.5 rounded-xl border border-sand/60 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm"></textarea>
         </div>
 
-        <button type="submit" class="btn-accent py-2.5 px-6 text-sm font-bold shadow-sm">
+        <button type="submit" class="btn-accent py-2.5 px-6 text-sm font-bold shadow-sm cursor-pointer">
           Publicar Reseña
         </button>
       </form>
@@ -144,7 +162,7 @@
           <div class="card-surface p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border border-sand/30">
             <div class="space-y-1">
               <div class="flex items-center gap-2">
-                <span class="font-bold text-sm text-ink dark:text-white">Orden: ${ord.id}</span>
+                <span class="font-bold text-sm text-[#3D6675] dark:text-[#9EC3D5] font-heading">Orden: ${ord.id}</span>
                 <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300">${ord.status}</span>
               </div>
               <p class="text-xs text-ink-muted dark:text-slate-400">Fecha: ${ord.date} · ${ord.pickupMethod || 'Retiro acordado'}</p>

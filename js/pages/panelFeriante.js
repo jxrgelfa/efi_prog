@@ -1,9 +1,9 @@
-import { renderNavbar } from '../../components/navbar.js';
-import { renderFooter } from '../../components/footer.js';
-import { auth } from '../../services/auth.js';
-import { dataService } from '../../services/dataService.js';
-import { formatCurrency } from '../../utils/formatters.js';
-import { showToast } from '../../components/toast.js';
+import { renderNavbar } from '../components/navbar.js';
+import { renderFooter } from '../components/footer.js';
+import { auth } from '../services/auth.js';
+import { dataService } from '../services/dataService.js';
+import { formatCurrency } from '../utils/formatters.js';
+import { showToast } from '../components/toast.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // Guard de rol feriante
@@ -53,7 +53,14 @@ document.addEventListener('DOMContentLoaded', () => {
             <img src="${p.image}" alt="${p.name}" class="w-10 h-10 rounded-lg object-cover border border-sand/40">
             <div>
               <span class="font-bold text-ink dark:text-white block">${p.name}</span>
-              ${p.isPromoted ? '<span class="text-[10px] text-accent font-extrabold uppercase">★ En Promoción</span>' : ''}
+              ${p.isPromoted ? `
+                <span class="inline-flex items-center gap-1 text-[10px] text-accent font-extrabold uppercase">
+                  <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                  </svg>
+                  <span>En Promoción</span>
+                </span>
+              ` : ''}
             </div>
           </div>
         </td>
@@ -66,8 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
           </span>
         </td>
         <td class="p-3.5 text-right space-x-2">
-          <button data-id="${p.id}" class="edit-prod-btn text-accent hover:underline font-bold text-xs">Editar</button>
-          <button data-id="${p.id}" class="delete-prod-btn text-rose-500 hover:underline font-bold text-xs">Eliminar</button>
+          <button data-id="${p.id}" class="edit-prod-btn text-accent hover:underline font-bold text-xs cursor-pointer">Editar</button>
+          <button data-id="${p.id}" class="delete-prod-btn text-rose-500 hover:underline font-bold text-xs cursor-pointer">Eliminar</button>
         </td>
       </tr>
     `).join('');
@@ -77,7 +84,16 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.addEventListener('click', () => {
         const id = btn.getAttribute('data-id');
         const prod = myProducts.find(p => p.id === id);
-        if (prod) openModal(prod);
+        if (prod) {
+          modalTitle.textContent = 'Editar Producto';
+          document.getElementById('prod-form-id').value = prod.id;
+          document.getElementById('prod-form-name').value = prod.name;
+          document.getElementById('prod-form-category').value = prod.category;
+          document.getElementById('prod-form-price').value = prod.price;
+          document.getElementById('prod-form-stock').value = prod.stock;
+          document.getElementById('prod-form-desc').value = prod.description;
+          modal.classList.remove('hidden');
+        }
       });
     });
 
@@ -85,59 +101,44 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.delete-prod-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const id = btn.getAttribute('data-id');
-        if (confirm('¿Deseás eliminar este producto de tu catálogo?')) {
+        if (confirm('¿Seguro que deseás eliminar este producto?')) {
           dataService.deleteProduct(id);
           renderTable();
-          showToast('Producto eliminado', 'info');
+          showToast('Producto eliminado del catálogo', 'info');
         }
       });
     });
   }
 
-  function openModal(prod = null) {
-    // Control de límite de 15 productos para Plan Básico
+  // Modal Handlers
+  const openModal = () => {
+    // Validar límite si es plan básico
     const currentCount = dataService.getProducts().filter(p => p.merchantId === merchantId).length;
-    if (!prod && isPlanBasico && currentCount >= 15) {
-      alert('Alcanzaste el límite de 15 productos del Plan Básico. Para publicar más artículos, pasate al Plan Pro en la sección de Planes.');
-      window.location.href = '../planes.html';
+    if (isPlanBasico && currentCount >= 15) {
+      alert('Alcanzaste el límite de 15 productos de tu Plan Básico. Actualizá a Plan Pro para publicar sin límites.');
       return;
     }
 
+    modalTitle.textContent = 'Agregar Producto';
     form.reset();
-    if (prod) {
-      modalTitle.textContent = 'Editar Producto';
-      document.getElementById('prod-form-id').value = prod.id;
-      document.getElementById('prod-form-name').value = prod.name;
-      document.getElementById('prod-form-category').value = prod.category;
-      document.getElementById('prod-form-price').value = prod.price;
-      document.getElementById('prod-form-stock').value = prod.stock;
-      document.getElementById('prod-form-fair').value = prod.fairId;
-      document.getElementById('prod-form-image').value = prod.image;
-      document.getElementById('prod-form-desc').value = prod.description;
-    } else {
-      modalTitle.textContent = 'Agregar Nuevo Producto';
-      document.getElementById('prod-form-id').value = '';
-    }
+    document.getElementById('prod-form-id').value = '';
     modal.classList.remove('hidden');
-  }
+  };
 
-  function closeModal() {
-    modal.classList.add('hidden');
-  }
+  const closeModal = () => modal.classList.add('hidden');
 
-  document.getElementById('open-new-prod-btn')?.addEventListener('click', () => openModal());
+  document.getElementById('open-new-prod-btn')?.addEventListener('click', openModal);
   document.getElementById('close-modal-btn')?.addEventListener('click', closeModal);
   document.getElementById('cancel-modal-btn')?.addEventListener('click', closeModal);
 
-  form?.addEventListener('submit', (e) => {
+  // Guardar / Crear producto
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
     const id = document.getElementById('prod-form-id').value;
     const name = document.getElementById('prod-form-name').value;
     const category = document.getElementById('prod-form-category').value;
-    const price = parseInt(document.getElementById('prod-form-price').value, 10);
-    const stock = parseInt(document.getElementById('prod-form-stock').value, 10);
-    const fairId = document.getElementById('prod-form-fair').value;
-    const image = document.getElementById('prod-form-image').value;
+    const price = parseFloat(document.getElementById('prod-form-price').value) || 0;
+    const stock = parseInt(document.getElementById('prod-form-stock').value, 10) || 0;
     const description = document.getElementById('prod-form-desc').value;
 
     const payload = {
@@ -145,8 +146,6 @@ document.addEventListener('DOMContentLoaded', () => {
       category,
       price,
       stock,
-      fairId,
-      image,
       description,
       merchantId,
       merchantName: merchant ? merchant.name : user.name
@@ -165,12 +164,18 @@ document.addEventListener('DOMContentLoaded', () => {
   if (applyList) {
     const fairs = dataService.getFairs();
     applyList.innerHTML = fairs.slice(0, 3).map(f => `
-      <div class="p-3.5 rounded-xl border border-sand/30 bg-cream dark:bg-slate-800/50 flex items-center justify-between gap-3 text-xs">
+      <div class="p-3.5 rounded-xl border border-sand/30 bg-[#E5EEF3] dark:bg-slate-800/50 flex items-center justify-between gap-3 text-xs">
         <div>
-          <p class="font-bold text-ink dark:text-white">${f.name}</p>
-          <p class="text-ink-muted dark:text-slate-400">🕒 ${f.schedule}</p>
+          <p class="font-bold text-[#3D6675] dark:text-[#9EC3D5] font-heading">${f.name}</p>
+          <p class="text-ink-muted dark:text-slate-400 flex items-center gap-1 mt-0.5">
+            <svg class="w-3.5 h-3.5 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" stroke-width="2"></circle>
+              <polyline points="12 6 12 12 16 14" stroke-width="2"></polyline>
+            </svg>
+            <span>${f.schedule}</span>
+          </p>
         </div>
-        <button class="apply-fair-btn btn-accent text-[11px] py-1.5 px-3 whitespace-nowrap" data-fair="${f.name}">
+        <button class="apply-fair-btn btn-accent text-[11px] py-1.5 px-3 whitespace-nowrap cursor-pointer" data-fair="${f.name}">
           Inscribirme
         </button>
       </div>
@@ -179,7 +184,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.apply-fair-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const fairName = btn.getAttribute('data-fair');
-        btn.textContent = '✓ Inscripto';
+        btn.innerHTML = `
+          <span class="inline-flex items-center gap-1">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Inscripto</span>
+          </span>
+        `;
         btn.disabled = true;
         btn.classList.replace('btn-accent', 'btn-outline');
         showToast(`Te postulaste exitosamente a "${fairName}". El organizador revisará tu solicitud.`, 'success');

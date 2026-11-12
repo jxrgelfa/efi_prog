@@ -12,16 +12,25 @@
   }
 
   body {
-    @apply bg-cream text-ink transition-colors duration-200 antialiased;
+    @apply bg-[#E5EEF3] dark:bg-[#151D24] text-ink dark:text-white transition-colors duration-200 antialiased;
   }
 
   html.dark body {
-    @apply bg-[#151B24] text-[#F3F4F6];
+    @apply bg-[#151D24] text-[#F3F4F6];
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Outfit', sans-serif;
-    @apply tracking-tight;
+    @apply tracking-tight text-[#3D6675] dark:text-[#9EC3D5];
+  }
+
+  /* Preservar texto blanco en banners fotográficos, hero carrusel, pie de página y tarjetas oscuras */
+  .text-white h1, .text-white h2, .text-white h3, .text-white h4, .text-white h5, .text-white h6,
+  .hero-slide h1, .hero-slide h2, .hero-slide h3, .hero-slide h4,
+  .bg-primary h1, .bg-primary h2, .bg-primary h3, .bg-primary h4,
+  .bg-primary-dark h1, .bg-primary-dark h2, .bg-primary-dark h3, .bg-primary-dark h4,
+  footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
+    color: #FFFFFF !important;
   }
 
   /* Ergonomía táctil para botones e inputs */
@@ -31,7 +40,12 @@
 }
 
 @layer components {
-  /* Botón primario de acción */
+  /* Títulos de marca en azul login/registro */
+  .title-brand {
+    @apply text-[#3D6675] dark:text-[#9EC3D5];
+  }
+
+  /* Botón de acción con acento cálido armonioso */
   .btn-accent {
     @apply inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 rounded-xl font-medium text-white bg-accent hover:bg-accent-hover transition-all duration-150 active:scale-[0.98] shadow-sm;
   }
@@ -49,6 +63,15 @@
   /* Tarjeta estándar */
   .card-surface {
     @apply bg-white dark:bg-[#1E2633] border border-sand/40 dark:border-slate-700/60 rounded-2xl shadow-sm transition-all duration-200;
+  }
+
+  /* Ocultar barra de scroll para carrusel táctil estilo Instagram */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
 

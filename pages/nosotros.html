@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiénes Somos — FeriaZone (Equipo EFI 2026)</title>
-  
+
   <script>
-    (function() {
+    (function () {
       try {
         var theme = localStorage.getItem('fz_theme');
         var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -15,104 +16,255 @@
         } else {
           document.documentElement.classList.remove('dark');
         }
-      } catch (e) {}
+      } catch (e) { }
     })();
   </script>
 
   <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-accent selection:text-white">
 
+<body
+  class="min-h-screen flex flex-col justify-between selection:bg-accent selection:text-white bg-[#E5EEF3] dark:bg-[#151D24] text-ink dark:text-white transition-colors">
+
+  <!-- Navbar inyectada -->
   <div id="navbar-placeholder"></div>
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow w-full space-y-12">
-    
-    <div class="text-center max-w-3xl mx-auto space-y-3">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 flex-grow w-full space-y-12 sm:space-y-16">
+
+    <!-- Encabezado sutil 2D en fondo blanco -->
+    <div class="text-center max-w-3xl mx-auto space-y-2">
       <span class="text-xs font-bold text-accent uppercase tracking-widest">
         Examen Final Integrador — Programación II
       </span>
-      <h1 class="text-3xl sm:text-5xl font-black text-ink dark:text-white font-heading">
+      <h1 class="text-3xl sm:text-5xl font-black text-[#3D6675] dark:text-[#9EC3D5] font-heading">
         El Equipo Detrás de FeriaZone
       </h1>
-      <p class="text-base text-ink-muted dark:text-slate-300 leading-relaxed">
-        Somos estudiantes comprometidos con resolver la visibilidad digital de los artesanos y emprendedores de Río Cuarto.
+      <p class="text-sm sm:text-base text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+        Somos un equipo de 5 estudiantes del ITEC Río Cuarto comprometidos con impulsar la visibilidad digital de los
+        artesanos y emprendedores locales.
       </p>
     </div>
 
-    <!-- Grilla del Equipo de Desarrollo -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      
-      <!-- Miembro 1 -->
-      <article class="card-surface p-6 text-center space-y-4 border border-sand/40 flex flex-col items-center">
-        <div class="w-28 h-28 rounded-3xl overflow-hidden border-2 border-accent shadow-md bg-sand/20">
-          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Integrante 1" class="w-full h-full object-cover">
+    <!-- ======================================================== -->
+    <!-- 5 INTEGRANTES: DISEÑO 2D PLANO DIRECTAMENTE EN LA PÁGINA -->
+    <!-- Sin cards, sin sombras, fondo blanco puro (#FFFFFF)     -->
+    <!-- En Desktop: fila de 3 arriba y fila de 2 centrados abajo -->
+    <!-- En Mobile: columna vertical centrada                     -->
+    <!-- ======================================================== -->
+    <div class="flex flex-wrap justify-center gap-12 sm:gap-14 lg:gap-16 max-w-6xl mx-auto pt-4 sm:pt-6">
+
+      <!-- ======================================================== -->
+      <!-- INTEGRANTE 1                                              -->
+      <!-- Foto: images/equipo/integrante1.png                      -->
+      <!-- ======================================================== -->
+      <article
+        class="w-full sm:w-[calc(50%-2rem)] lg:w-[calc(33.333%-2.75rem)] max-w-xs flex flex-col items-center text-center">
+        <!-- Foto circular plana 2D directamente en la página -->
+        <div class="w-44 h-44 sm:w-52 sm:h-52 rounded-full overflow-hidden mx-auto bg-gray-100 dark:bg-slate-800">
+          <img src="../images/equipo/integrante1.jpeg" alt="Foto Integrante 1" class="w-full h-full object-cover"
+            onerror="this.onerror=null; this.src='../images/equipo/integrante1.jpg'; this.onerror=function(){this.src='../images/equipo/integrante1.svg';};">
         </div>
-        <div>
-          <h3 class="text-lg font-bold text-ink dark:text-white font-heading">Agustina Romero</h3>
-          <p class="text-xs font-bold text-accent">Líder de Proyecto & Frontend</p>
-          <p class="text-xs text-ink-muted dark:text-slate-300 mt-2 leading-relaxed">
-            Coordinación de requerimientos, diseño de directivas y arquitectura de servicios de datos.
+
+        <!-- Bloque 2D con Rol en lugar de 'Contacto' -->
+        <div class="mt-6 space-y-1 w-full">
+          <span class="text-xs font-bold text-accent dark:text-sand-light tracking-widest uppercase block mb-1">
+            DESARROLLO FRONTEND
+          </span>
+          <p class="text-base text-gray-900 dark:text-gray-100 font-normal">
+            Rio Cuarto, Argentina
           </p>
+          <p class="text-base text-gray-900 dark:text-gray-100 font-normal">
+            <a href="tel:+543585703953" class="hover:text-accent transition-colors">
+              +54 358 570-3953
+            </a>
+          </p>
+          <p class="text-base text-gray-900 dark:text-gray-100 font-normal">
+            <a href="mailto:l.fernandez@itecriocuarto.org.ar" class="hover:text-accent transition-colors break-all">
+              l.fernandez@itecriocuarto.org.ar
+            </a>
+          </p>
+
+          <div
+            class="flex items-center justify-center gap-6 pt-3 text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-normal">
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              class="hover:text-accent hover:underline transition-colors">Instagram</a>
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              class="hover:text-accent hover:underline transition-colors">Facebook</a>
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              class="hover:text-accent hover:underline transition-colors">Twitter</a>
+          </div>
         </div>
       </article>
 
-      <!-- Miembro 2 -->
-      <article class="card-surface p-6 text-center space-y-4 border border-sand/40 flex flex-col items-center">
-        <div class="w-28 h-28 rounded-3xl overflow-hidden border-2 border-primary shadow-md bg-sand/20">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="Integrante 2" class="w-full h-full object-cover">
+      <!-- ======================================================== -->
+      <!-- INTEGRANTE 2                                              -->
+      <!-- Foto: images/equipo/integrante2.png (o .jpg / .svg)      -->
+      <!-- ======================================================== -->
+      <article
+        class="w-full sm:w-[calc(50%-2rem)] lg:w-[calc(33.333%-2.75rem)] max-w-xs flex flex-col items-center text-center">
+        <div class="w-44 h-44 sm:w-52 sm:h-52 rounded-full overflow-hidden mx-auto bg-gray-100 dark:bg-slate-800">
+          <img src="../images/equipo/integrante3.jpeg" alt="Foto Integrante 2" class="w-full h-full object-cover"
+            onerror="this.onerror=null; this.src='../images/equipo/integrante2.jpg'; this.onerror=function(){this.src='../images/equipo/integrante2.svg';};">
         </div>
-        <div>
-          <h3 class="text-lg font-bold text-ink dark:text-white font-heading">Tomás Cabrera</h3>
-          <p class="text-xs font-bold text-primary dark:text-sand-light">Frontend Developer & Lógica</p>
-          <p class="text-xs text-ink-muted dark:text-slate-300 mt-2 leading-relaxed">
-            Implementación de carrito, almacenamiento en localStorage y simulador de roles demo.
+
+        <div class="mt-6 space-y-1 w-full">
+          <span class="text-xs font-bold text-accent dark:text-sand-light tracking-widest uppercase block mb-1">
+            DISEÑO UI / UX
+          </span>
+          <p class="text-base text-gray-900 dark:text-gray-100 font-normal">
+            Rio Cuarto, Argentina
           </p>
+          <p class="text-base text-gray-900 dark:text-gray-100 font-normal">
+            <a href="tel:+543580000002" class="hover:text-accent transition-colors">
+              +54 358 000-0002
+            </a>
+          </p>
+          <p class="text-base text-gray-900 dark:text-gray-100 font-normal">
+            <a href="mailto:integrante2@itecriocuarto.org.ar" class="hover:text-accent transition-colors break-all">
+              integrante2@itecriocuarto.org.ar
+            </a>
+          </p>
+
+          <div
+            class="flex items-center justify-center gap-6 pt-3 text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-normal">
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              class="hover:text-accent hover:underline transition-colors">Instagram</a>
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              class="hover:text-accent hover:underline transition-colors">Facebook</a>
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              class="hover:text-accent hover:underline transition-colors">Twitter</a>
+          </div>
         </div>
       </article>
 
-      <!-- Miembro 3 -->
-      <article class="card-surface p-6 text-center space-y-4 border border-sand/40 flex flex-col items-center">
-        <div class="w-28 h-28 rounded-3xl overflow-hidden border-2 border-accent shadow-md bg-sand/20">
-          <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" alt="Integrante 3" class="w-full h-full object-cover">
+      <!-- ======================================================== -->
+      <!-- INTEGRANTE 3                                              -->
+      <!-- Foto: images/equipo/integrante3.png (o .jpg / .svg)      -->
+      <!-- ======================================================== -->
+      <article
+        class="w-full sm:w-[calc(50%-2rem)] lg:w-[calc(33.333%-2.75rem)] max-w-xs flex flex-col items-center text-center">
+        <div class="w-44 h-44 sm:w-52 sm:h-52 rounded-full overflow-hidden mx-auto bg-gray-100 dark:bg-slate-800">
+          <img src="../images/equipo/integrante2.jpeg" alt="Foto Integrante 3" class="w-full h-full object-cover"
+            onerror="this.onerror=null; this.src='../images/equipo/integrante3.jpg'; this.onerror=function(){this.src='../images/equipo/integrante3.svg';};">
         </div>
-        <div>
-          <h3 class="text-lg font-bold text-ink dark:text-white font-heading">Brisa Fernández</h3>
-          <p class="text-xs font-bold text-accent">Diseño UI / UX & Accesibilidad</p>
-          <p class="text-xs text-ink-muted dark:text-slate-300 mt-2 leading-relaxed">
-            Identidad de marca, tokens de color, contraste WCAG AA para luz solar y responsive.
+
+        <div class="mt-6 space-y-1 w-full">
+          <span class="text-xs font-bold text-accent dark:text-sand-light tracking-widest uppercase block mb-1">
+            LÓGICA & CATÁLOGO
+          </span>
+          <p class="text-base text-gray-900 dark:text-gray-100 font-normal">
+            Rio Cuarto, Argentina
           </p>
+          <p class="text-base text-gray-900 dark:text-gray-100 font-normal">
+            <a href="tel:+543580000003" class="hover:text-accent transition-colors">
+              +54 358 000-0003
+            </a>
+          </p>
+          <p class="text-base text-gray-900 dark:text-gray-100 font-normal">
+            <a href="mailto:integrante3@itecriocuarto.org.ar" class="hover:text-accent transition-colors break-all">
+              integrante3@itecriocuarto.org.ar
+            </a>
+          </p>
+
+          <div
+            class="flex items-center justify-center gap-6 pt-3 text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-normal">
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              class="hover:text-accent hover:underline transition-colors">Instagram</a>
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              class="hover:text-accent hover:underline transition-colors">Facebook</a>
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              class="hover:text-accent hover:underline transition-colors">Twitter</a>
+          </div>
         </div>
       </article>
 
-      <!-- Miembro 4 -->
-      <article class="card-surface p-6 text-center space-y-4 border border-sand/40 flex flex-col items-center">
-        <div class="w-28 h-28 rounded-3xl overflow-hidden border-2 border-primary shadow-md bg-sand/20">
-          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" alt="Integrante 4" class="w-full h-full object-cover">
+      <!-- ======================================================== -->
+      <!-- INTEGRANTE 4                                              -->
+      <!-- Foto: images/equipo/integrante4.png (o .jpg / .svg)      -->
+      <!-- ======================================================== -->
+      <article
+        class="w-full sm:w-[calc(50%-2rem)] lg:w-[calc(33.333%-2.75rem)] max-w-xs flex flex-col items-center text-center">
+        <div class="w-44 h-44 sm:w-52 sm:h-52 rounded-full overflow-hidden mx-auto bg-gray-100 dark:bg-slate-800">
+          <img src="../images/equipo/integrante4.jpeg" alt="Foto Integrante 4" class="w-full h-full object-cover"
+            onerror="this.onerror=null; this.src='../images/equipo/integrante4.jpg'; this.onerror=function(){this.src='../images/equipo/integrante4.svg';};">
         </div>
-        <div>
-          <h3 class="text-lg font-bold text-ink dark:text-white font-heading">Jorge Benítez</h3>
-          <p class="text-xs font-bold text-primary dark:text-sand-light">Geolocalización & Integración</p>
-          <p class="text-xs text-ink-muted dark:text-slate-300 mt-2 leading-relaxed">
-            Mapeo interactivo con Leaflet, cálculo de cercanía por GPS y pruebas funcionales.
+
+        <div class="mt-6 space-y-1 w-full">
+          <span class="text-xs font-bold text-accent dark:text-sand-light tracking-widest uppercase block mb-1">
+            GEOLOCALIZACIÓN & FERIAS
+          </span>
+          <p class="text-base text-gray-900 dark:text-gray-100 font-normal">
+            Rio Cuarto, Argentina
           </p>
+          <p class="text-base text-gray-900 dark:text-gray-100 font-normal">
+            <a href="tel:+543580000004" class="hover:text-accent transition-colors">
+              +54 358 000-0004
+            </a>
+          </p>
+          <p class="text-base text-gray-900 dark:text-gray-100 font-normal">
+            <a href="mailto:integrante4@itecriocuarto.org.ar" class="hover:text-accent transition-colors break-all">
+              integrante4@itecriocuarto.org.ar
+            </a>
+          </p>
+
+          <div
+            class="flex items-center justify-center gap-6 pt-3 text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-normal">
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              class="hover:text-accent hover:underline transition-colors">Instagram</a>
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              class="hover:text-accent hover:underline transition-colors">Facebook</a>
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              class="hover:text-accent hover:underline transition-colors">Twitter</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ======================================================== -->
+      <!-- INTEGRANTE 5                                              -->
+      <!-- Foto: images/equipo/integrante5.png (o .jpg / .svg)      -->
+      <!-- ======================================================== -->
+      <article
+        class="w-full sm:w-[calc(50%-2rem)] lg:w-[calc(33.333%-2.75rem)] max-w-xs flex flex-col items-center text-center">
+        <div class="w-44 h-44 sm:w-52 sm:h-52 rounded-full overflow-hidden mx-auto bg-gray-100 dark:bg-slate-800">
+          <img src="../images/equipo/integrante5.jpeg" alt="Foto Integrante 5" class="w-full h-full object-cover"
+            onerror="this.onerror=null; this.src='../images/equipo/integrante5.jpg'; this.onerror=function(){this.src='../images/equipo/integrante5.svg';};">
+        </div>
+
+        <div class="mt-6 space-y-1 w-full">
+          <span class="text-xs font-bold text-accent dark:text-sand-light tracking-widest uppercase block mb-1">
+            TESTING & QA
+          </span>
+          <p class="text-base text-gray-900 dark:text-gray-100 font-normal">
+            Rio Cuarto, Argentina
+          </p>
+          <p class="text-base text-gray-900 dark:text-gray-100 font-normal">
+            <a href="tel:+543580000005" class="hover:text-accent transition-colors">
+              +54 358 000-0005
+            </a>
+          </p>
+          <p class="text-base text-gray-900 dark:text-gray-100 font-normal">
+            <a href="mailto:integrante5@itecriocuarto.org.ar" class="hover:text-accent transition-colors break-all">
+              integrante5@itecriocuarto.org.ar
+            </a>
+          </p>
+
+          <div
+            class="flex items-center justify-center gap-6 pt-3 text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-normal">
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              class="hover:text-accent hover:underline transition-colors">Instagram</a>
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              class="hover:text-accent hover:underline transition-colors">Facebook</a>
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              class="hover:text-accent hover:underline transition-colors">Twitter</a>
+          </div>
         </div>
       </article>
 
     </div>
-
-    <!-- Valores y Misión -->
-    <section class="card-surface p-8 sm:p-12 border border-sand/40 max-w-4xl mx-auto space-y-4 text-center">
-      <span class="text-3xl">🤝</span>
-      <h2 class="text-2xl font-bold text-ink dark:text-white font-heading">
-        Nuestro Compromiso con Río Cuarto
-      </h2>
-      <p class="text-sm text-ink-muted dark:text-slate-300 leading-relaxed max-w-2xl mx-auto">
-        Creemos que la tecnología debe acercar oportunidades reales a quienes producen con sus propias manos. FeriaZone no cobra comisiones por venta: es una herramienta pensada para potenciar a las economías familiares en cada plaza de nuestra ciudad.
-      </p>
-    </section>
 
   </main>
 
+  <!-- Footer general de la web restaurado -->
   <div id="footer-placeholder"></div>
 
   <script type="module">
@@ -124,4 +276,5 @@
     });
   </script>
 </body>
+
 </html>
