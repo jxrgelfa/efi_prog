@@ -17,7 +17,7 @@ export function renderFairCard(fair) {
   const priceText = fair.price || '10.000$';
 
   return `
-  <article class="bg-white dark:bg-[#1E2633] rounded-2xl sm:rounded-3xl border border-sand/30 dark:border-slate-800 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-lg transition-all duration-200 group">
+  <article class="bg-white dark:bg-[#182238] rounded-2xl sm:rounded-3xl border border-sand/30 dark:border-slate-800 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-lg transition-all duration-200 group">
     <!-- Portada de la Feria -->
     <div class="relative h-44 sm:h-52 w-full overflow-hidden bg-sand/20">
       <img 
@@ -25,6 +25,7 @@ export function renderFairCard(fair) {
         alt="${fair.name}" 
         loading="lazy"
         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        onerror="this.onerror=null; this.src='${rootPrefix}imagenes/banner.jpg';"
       >
       <div class="absolute top-3 right-3 z-10">
         <span class="px-2.5 py-1 text-[11px] font-bold rounded-full bg-slate-900/70 text-white backdrop-blur-xs shadow-xs">
@@ -36,7 +37,7 @@ export function renderFairCard(fair) {
     <!-- Contenido y Metadatos de la Feria -->
     <div class="p-4 sm:p-5 flex-grow flex flex-col justify-between space-y-3">
       <div>
-        <h3 class="text-base sm:text-lg font-bold text-[#3D6675] dark:text-[#9EC3D5] group-hover:text-accent transition-colors font-heading leading-snug">
+        <h3 class="text-base sm:text-lg font-bold text-[#1E2B55] dark:text-[#A7BFD4] group-hover:text-accent transition-colors font-heading leading-snug">
           <a href="${pagesPrefix}feria.html?id=${fair.id}">
             ${fair.name}
           </a>
@@ -74,7 +75,7 @@ export function renderFairCard(fair) {
 
       <!-- Fila inferior: Precio y enlace a ver feriantes -->
       <div class="pt-3 border-t border-sand/30 dark:border-slate-700/60 flex items-center justify-between">
-        <span class="text-base sm:text-lg font-black text-[#3D6675] dark:text-[#9EC3D5] font-heading">
+        <span class="text-base sm:text-lg font-black text-[#1E2B55] dark:text-[#A7BFD4] font-heading">
           ${priceText}
         </span>
         <a href="${pagesPrefix}feria.html?id=${fair.id}" class="text-xs sm:text-sm font-bold text-accent hover:text-accent-hover inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">

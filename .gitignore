@@ -5,6 +5,7 @@ node_modules/
 tmp/
 .DS_Store
 *.log
+.vercel
 
 # Entorno y credenciales
 .env

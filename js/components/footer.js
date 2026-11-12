@@ -38,7 +38,7 @@ export function renderFooter() {
           <h4 class="text-white font-bold text-base mb-4 font-heading border-b border-sand/20 pb-2">Navegación</h4>
           <ul class="space-y-2 text-sm">
             <li><a href="${rootPrefix}index.html" class="hover:text-accent transition-colors">Inicio</a></li>
-            <li><a href="${pagesPrefix}catalogo.html" class="hover:text-accent transition-colors">Tienda (Catálogo)</a></li>
+            <li><a href="${pagesPrefix}tienda.html" class="hover:text-accent transition-colors">Tienda</a></li>
             <li><a href="${pagesPrefix}ferias.html" class="hover:text-accent transition-colors">Guía de Ferias</a></li>
             <li><a href="${pagesPrefix}mapa.html" class="hover:text-accent transition-colors">Mapa y Cercanía</a></li>
             <li><a href="${pagesPrefix}planes.html" class="hover:text-accent transition-colors">Planes y Promociones</a></li>

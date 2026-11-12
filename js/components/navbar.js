@@ -11,7 +11,7 @@ import { initThemeToggle } from './themeToggle.js';
  *   Bolsa de compras SVG y Menú Hamburguesa SVG.
  * - Menú hamburguesa: 100% libre de emojis, íconos SVG de trazo limpio.
  */
-export function renderNavbar(currentPath = '') {
+export function renderNavbar(currentPath = '', options = {}) {
   const user = auth.getCurrentUser();
   const cartCount = cart.getCount();
 
@@ -30,8 +30,14 @@ export function renderNavbar(currentPath = '') {
     else if (user.role === 'organizador') panelLink = `${pagesPrefix}organizador/index.html`;
   }
 
+  const placeholder = document.getElementById('navbar-placeholder');
+  const isDesktopOnly = options.desktopOnly || (placeholder && placeholder.dataset.desktopOnly === 'true');
+  const headerClass = isDesktopOnly
+    ? 'hidden md:block sticky top-0 z-40 bg-[#E2EBF1]/95 dark:bg-[#121A2C]/95 backdrop-blur-md text-ink dark:text-white border-b border-sand/30 dark:border-slate-800 transition-colors shadow-xs'
+    : 'sticky top-0 z-40 bg-[#E2EBF1]/95 dark:bg-[#121A2C]/95 backdrop-blur-md text-ink dark:text-white border-b border-sand/30 dark:border-slate-800 transition-colors shadow-xs';
+
   const html = `
-  <header class="sticky top-0 z-40 bg-[#EBF2F7]/95 dark:bg-slate-900/95 backdrop-blur-md text-ink dark:text-white border-b border-sand/30 dark:border-slate-800 transition-colors shadow-xs">
+  <header class="${headerClass}">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- BARRA PRINCIPAL -->
@@ -47,7 +53,7 @@ export function renderNavbar(currentPath = '') {
           <a href="${pagesPrefix}ferias.html" class="text-xs lg:text-sm font-bold tracking-wider text-ink dark:text-slate-100 hover:text-accent transition-colors font-heading uppercase">
             Ferias
           </a>
-          <a href="${pagesPrefix}catalogo.html" class="text-xs lg:text-sm font-bold tracking-wider text-ink dark:text-slate-100 hover:text-accent transition-colors font-heading uppercase">
+          <a href="${pagesPrefix}tienda.html" class="text-xs lg:text-sm font-bold tracking-wider text-ink dark:text-slate-100 hover:text-accent transition-colors font-heading uppercase">
             Tienda
           </a>
           <a href="${pagesPrefix}contacto.html" class="text-xs lg:text-sm font-bold tracking-wider text-ink dark:text-slate-100 hover:text-accent transition-colors font-heading uppercase">
@@ -62,16 +68,15 @@ export function renderNavbar(currentPath = '') {
         <!-- LOGO CENTRAL (Únicamente en el centro)          -->
         <!-- ============================================== -->
         <div class="flex items-center justify-center flex-shrink-0">
-          <a href="${rootPrefix}index.html" class="flex items-center group" aria-label="Ir al inicio de FeriaZone">
+          <a href="${rootPrefix}index.html" class="flex items-center group" aria-label="Ir al inicio">
             <div class="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden bg-white dark:bg-slate-800 border-2 border-sand/50 shadow-sm group-hover:scale-105 transition-transform">
               <img 
                 src="${rootPrefix}imagenes/logo.png" 
-                alt="Logo FeriaZone" 
+                alt="Logo" 
                 class="w-full h-full object-cover"
                 onerror="this.onerror=null; this.src='${rootPrefix}images/logo.png';"
               >
             </div>
-            <span class="sr-only">FeriaZone</span>
           </a>
         </div>
 
@@ -196,7 +201,7 @@ export function renderNavbar(currentPath = '') {
       <!-- BARRA DE BÚSQUEDA DESPLEGABLE (Mobile y Desktop) -->
       <!-- ============================================== -->
       <div id="nav-search-bar" class="hidden py-3 border-t border-sand/30 dark:border-slate-800 transition-all">
-        <form id="nav-search-form" action="${pagesPrefix}catalogo.html" method="GET" class="relative max-w-xl mx-auto flex items-center">
+        <form id="nav-search-form" action="${pagesPrefix}tienda.html" method="GET" class="relative max-w-xl mx-auto flex items-center">
           <input 
             type="search" 
             name="q" 
@@ -244,7 +249,7 @@ export function renderNavbar(currentPath = '') {
         </a>
 
         <!-- Tienda -->
-        <a href="${pagesPrefix}catalogo.html" class="group flex items-center justify-between px-3.5 py-2.5 rounded-xl text-base font-semibold text-ink dark:text-white hover:bg-sand/20 dark:hover:bg-slate-800 transition-colors">
+        <a href="${pagesPrefix}tienda.html" class="group flex items-center justify-between px-3.5 py-2.5 rounded-xl text-base font-semibold text-ink dark:text-white hover:bg-sand/20 dark:hover:bg-slate-800 transition-colors">
           <span>Tienda</span>
           <svg class="w-5 h-5 text-accent group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
@@ -318,7 +323,6 @@ export function renderNavbar(currentPath = '') {
   `;
 
   // Montar en el placeholder o al inicio del body
-  const placeholder = document.getElementById('navbar-placeholder');
   if (placeholder) {
     placeholder.outerHTML = html;
   } else {
@@ -381,4 +385,14 @@ export function renderNavbar(currentPath = '') {
       }
     });
   });
+
+  // Asegurar favicon en la pestaña / tabulador del navegador si no está presente
+  if (!document.querySelector('link[rel*="icon"]')) {
+    const iconLink = document.createElement('link');
+    iconLink.rel = 'icon';
+    iconLink.type = 'image/png';
+    iconLink.href = `${rootPrefix}images/logo.png`;
+    document.head.appendChild(iconLink);
+  }
 }
+

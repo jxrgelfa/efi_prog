@@ -24,14 +24,17 @@
 - **Semántica y ARIA:** Uso correcto de `nav`, `main`, `footer`, `section`, `article`, `aria-label`, `aria-expanded` para menús hamburguesa y modales.
 - **Respeto a preferencias del usuario:** Soportar `prefers-reduced-motion` silenciando o simplificando transiciones.
 
-## 3. Identidad Visual y Paleta Oficial
-| Token | Valor Hex | Uso Principal |
+## 3. Identidad Visual y Paleta Oficial (8 Tonos)
+| Token / Rol | Valor Hex | Muestra / Uso Principal |
 |---|---|---|
-| `primary` | `#3F4E63` | Azul pizarra (navbar, encabezados, botones secundarios) |
-| `accent` | `#B8654A` | Terracota (llamados a la acción CTA, botones primarios, badges destacados) |
-| `sand` | `#D4BC94` | Beige arena (bordes de tarjetas, acentos secundarios, fondos suaves) |
-| `cream` | `#F5EFE6` | Crema (fondo general de la aplicación en modo claro) |
-| `ink` | `#1F2733` | Tinta oscura (color de texto principal en modo claro) |
+| `cream` (Color Principal) | `#E2EBF1` | **Azul Pálido**: Fondo general de la aplicación en modo claro y barras superiores |
+| `primary.DEFAULT` | `#506580` | **Azul Musgo Pálido**: Identidad principal, botones secundarios, acentos de tarjeta |
+| `primary.dark` / `ink` | `#1E2B55` | **Azul Marino Profundo**: Encabezados (h1..h6), texto de alta legibilidad, pie de página |
+| `primary.light` | `#7994A6` | **Azul Medio Polvoriento**: Subtítulos, detalles sutiles, bordes suaves |
+| `sand` | `#D7C6AD` | **Arena Suave**: Bordes de tarjetas, divisores y badges neutrales |
+| `accent` / `brass` | `#B58120` / `#D7C393` | **Acento de Latón**: Botones de acción (CTA), badges destacados, estrellas de reseña |
+| `moss.DEFAULT` | `#869F8A` | **Verde Musgo Pálido**: Categorías ecológicas/artesanales y estados |
+| `moss.dark` (Satin Metal) | `#5C725D` | **Acento y Latón Lopo Satin Metal**: Badges terrosos y acentos de contraste |
 
 ## 4. Modo Claro y Oscuro
 - Gestionado a través de la clase `.dark` en el elemento raíz `<html>`.

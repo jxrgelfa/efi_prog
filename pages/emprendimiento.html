@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Feriando Ando — FeriaZone</title>
+  <!-- Favicon / Icono del tabulador del navegador -->
+  <link rel="icon" type="image/png" href="../images/logo.png">
+  <link rel="apple-touch-icon" href="../images/logo.png">
+  <link rel="shortcut icon" href="../favicon.ico">
   <meta name="description" content="Accesorios hechos a mano con piedras naturales y mucho amor en FeriaZone Río Cuarto.">
 
   <!-- Script anti-parpadeo FOUC -->
@@ -23,13 +27,17 @@
 
   <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-accent selection:text-white transition-colors">
+<body class="min-h-screen flex flex-col justify-between selection:bg-accent selection:text-white bg-[#E2EBF1] dark:bg-[#121A2C] text-ink dark:text-white transition-colors">
 
   <!-- ============================================== -->
-  <!-- BARRA DE NAVEGACIÓN SUPERIOR (FIGMA SCREEN 2)  -->
-  <!-- Botón Volver SVG < | Logo Centrado | Opciones  -->
+  <!-- NAVBAR DESKTOP: Estándar para toda la web FeriaZone -->
   <!-- ============================================== -->
-  <header id="emprendimiento-header" class="sticky top-0 z-40 backdrop-blur-md border-b border-black/5 dark:border-white/10 px-4 py-2.5 sm:py-3 transition-colors">
+  <div id="navbar-placeholder" data-desktop-only="true"></div>
+
+  <!-- ============================================== -->
+  <!-- NAVBAR MOBILE: Barra de aplicación móvil       -->
+  <!-- ============================================== -->
+  <header id="emprendimiento-header" class="block md:hidden sticky top-0 z-40 backdrop-blur-md border-b border-black/5 dark:border-white/10 px-4 py-2.5 sm:py-3 transition-colors text-ink dark:text-white">
     <div class="max-w-4xl mx-auto flex items-center justify-between">
       
       <!-- Botón Volver con Icono SVG (0 emojis) -->
@@ -66,7 +74,7 @@
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
           </svg>
-          <span id="nav-cart-badge" class="hidden absolute -top-1 -right-1 bg-accent text-white font-bold text-[10px] rounded-full w-4 h-4 flex items-center justify-center shadow-xs">
+          <span id="nav-cart-badge-mobile" class="hidden absolute -top-1 -right-1 bg-accent text-white font-bold text-[10px] rounded-full w-4 h-4 flex items-center justify-center shadow-xs">
             0
           </span>
         </a>
@@ -90,9 +98,9 @@
   </header>
 
   <!-- ============================================== -->
-  <!-- CONTENEDOR PRINCIPAL DEL EMPRENDIMIENTO (FIGMA) -->
+  <!-- CONTENEDOR PRINCIPAL DEL EMPRENDIMIENTO         -->
   <!-- ============================================== -->
-  <main class="flex-grow w-full">
+  <main class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
     <div id="merchant-container" class="w-full">
       <!-- Renderizado dinámico vía emprendimiento.js -->
     </div>

@@ -18,16 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (items.length === 0) {
       wrapper.innerHTML = `
         <div class="card-surface p-12 text-center space-y-4 max-w-lg mx-auto">
-          <div class="w-20 h-20 rounded-2xl bg-sand/30 dark:bg-slate-800 text-[#4E7B8C] dark:text-[#9EC3D5] flex items-center justify-center mx-auto shadow-inner">
+          <div class="w-20 h-20 rounded-2xl bg-sand/30 dark:bg-slate-800 text-primary dark:text-[#A7BFD4] flex items-center justify-center mx-auto shadow-inner">
             <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
             </svg>
           </div>
-          <h2 class="text-2xl font-bold text-[#3D6675] dark:text-[#9EC3D5] font-heading">Tu carrito está vacío</h2>
+          <h2 class="text-2xl font-bold text-[#1E2B55] dark:text-[#A7BFD4] font-heading">Tu carrito está vacío</h2>
           <p class="text-sm text-ink-muted dark:text-slate-300">
             Aún no agregaste productos de las ferias de Río Cuarto.
           </p>
-          <a href="./catalogo.html" class="btn-accent inline-block mt-2">
+          <a href="./tienda.html" class="btn-accent inline-block mt-2">
             Explorar Tienda
           </a>
         </div>
@@ -44,10 +44,15 @@ document.addEventListener('DOMContentLoaded', () => {
             ${items.map(item => `
               <div class="p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div class="flex items-center space-x-4 w-full sm:w-auto">
-                  <img src="${item.image}" alt="${item.name}" class="w-16 h-16 sm:w-20 sm:h-20 rounded-xl object-cover border border-sand/40">
+                  <img 
+                    src="${item.image.startsWith('http') ? item.image : `../${item.image.replace(/^\.\//, '')}`}" 
+                    alt="${item.name}" 
+                    class="w-16 h-16 sm:w-20 sm:h-20 rounded-xl object-cover border border-sand/40"
+                    onerror="this.onerror=null; if(this.src.includes('imagenes/')) { this.src=this.src.replace('imagenes/', 'images/'); } else { this.src='../images/logo.png'; }"
+                  >
                   <div>
                     <span class="text-[11px] text-accent font-semibold uppercase tracking-wider block">${item.merchantName}</span>
-                    <h3 class="text-base font-bold text-[#3D6675] dark:text-[#9EC3D5] font-heading">${item.name}</h3>
+                    <h3 class="text-base font-bold text-[#1E2B55] dark:text-[#A7BFD4] font-heading">${item.name}</h3>
                     <span class="text-sm font-extrabold text-accent font-heading">${formatCurrency(item.price)}</span>
                   </div>
                 </div>
@@ -63,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   <!-- Subtotal -->
                   <div class="text-right">
                     <span class="text-xs text-ink-light dark:text-slate-400 block">Subtotal</span>
-                    <span class="text-base font-bold text-[#3D6675] dark:text-[#9EC3D5] font-heading">${formatCurrency(item.price * item.quantity)}</span>
+                    <span class="text-base font-bold text-[#1E2B55] dark:text-[#A7BFD4] font-heading">${formatCurrency(item.price * item.quantity)}</span>
                   </div>
 
                   <!-- Eliminar -->
@@ -78,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
 
           <div class="flex justify-between items-center pt-2">
-            <a href="./catalogo.html" class="text-xs font-semibold text-accent hover:underline">
+            <a href="./tienda.html" class="text-xs font-semibold text-accent hover:underline">
               ← Seguir agregando productos
             </a>
             <button id="cart-clear-all" class="text-xs text-rose-500 hover:underline cursor-pointer">
@@ -90,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <!-- Checkout Simulado -->
         <div class="lg:col-span-4">
           <div class="card-surface p-6 space-y-6 border border-sand/40 sticky top-24">
-            <h3 class="text-xl font-bold text-[#3D6675] dark:text-[#9EC3D5] font-heading border-b border-sand/30 pb-3">
+            <h3 class="text-xl font-bold text-[#1E2B55] dark:text-[#A7BFD4] font-heading border-b border-sand/30 pb-3">
               Resumen del Pedido
             </h3>
 
@@ -211,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-600">
               ¡Pedido Registrado con Éxito!
             </span>
-            <h2 class="text-2xl sm:text-3xl font-black text-[#3D6675] dark:text-[#9EC3D5] font-heading">
+            <h2 class="text-2xl sm:text-3xl font-black text-[#1E2B55] dark:text-[#A7BFD4] font-heading">
               Número de Orden: <span class="text-accent">${order.id}</span>
             </h2>
             <p class="text-sm text-ink-muted dark:text-slate-300 leading-relaxed">
@@ -226,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
 
           <div class="flex flex-col sm:flex-row gap-3 justify-center pt-2">
-            <a href="./catalogo.html" class="btn-accent text-sm py-2.5 px-5">
+            <a href="./tienda.html" class="btn-accent text-sm py-2.5 px-5">
               Seguir explorando la Tienda
             </a>
             <a href="./usuario/index.html" class="btn-outline text-sm py-2.5 px-5">

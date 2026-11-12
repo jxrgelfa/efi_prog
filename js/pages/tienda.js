@@ -29,11 +29,46 @@ document.addEventListener('DOMContentLoaded', () => {
     fairSelect.value = urlParams.get('feria');
   }
 
+  // Elementos de Mostrar / Ocultar Filtros
+  const toggleFiltersBtn = document.getElementById('toggle-filters-btn');
+  const filtersContent = document.getElementById('filters-content');
+  const toggleFiltersText = document.getElementById('toggle-filters-text');
+  const toggleFiltersIcon = document.getElementById('toggle-filters-icon');
+  const activeFiltersBadge = document.getElementById('active-filters-badge');
+
+  if (toggleFiltersBtn && filtersContent) {
+    toggleFiltersBtn.addEventListener('click', () => {
+      const isHidden = filtersContent.classList.toggle('hidden');
+      toggleFiltersBtn.setAttribute('aria-expanded', String(!isHidden));
+      if (toggleFiltersText) {
+        toggleFiltersText.textContent = isHidden ? 'Mostrar filtros' : 'Ocultar filtros';
+      }
+      if (toggleFiltersIcon) {
+        toggleFiltersIcon.classList.toggle('rotate-180', isHidden);
+      }
+    });
+  }
+
   function applyFilters() {
     const query = (searchInput.value || '').trim().toLowerCase();
     const category = categorySelect.value;
     const fair = fairSelect.value;
     const sort = sortSelect.value;
+
+    // Actualizar badge de filtros activos
+    let activeFilterCount = 0;
+    if (query) activeFilterCount++;
+    if (category && category !== 'all') activeFilterCount++;
+    if (fair && fair !== 'all') activeFilterCount++;
+
+    if (activeFiltersBadge) {
+      if (activeFilterCount > 0) {
+        activeFiltersBadge.textContent = `${activeFilterCount} activo${activeFilterCount === 1 ? '' : 's'}`;
+        activeFiltersBadge.classList.remove('hidden');
+      } else {
+        activeFiltersBadge.classList.add('hidden');
+      }
+    }
 
     let filtered = allProducts.filter(p => {
       const matchesQuery = !query || 
@@ -64,12 +99,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (filtered.length === 0) {
       gridContainer.innerHTML = `
         <div class="col-span-full card-surface p-12 text-center space-y-3">
-          <div class="w-16 h-16 rounded-2xl bg-sand/30 dark:bg-slate-800 text-[#4E7B8C] dark:text-[#9EC3D5] flex items-center justify-center mx-auto shadow-inner">
+          <div class="w-16 h-16 rounded-2xl bg-sand/30 dark:bg-slate-800 text-primary dark:text-[#A7BFD4] flex items-center justify-center mx-auto shadow-inner">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m1.85-5.65a7.5 7.5 0 11-15 0 7.5 7.5 0 0115 0z"></path>
             </svg>
           </div>
-          <h3 class="text-lg font-bold text-[#3D6675] dark:text-[#9EC3D5] font-heading">No encontramos productos con esos filtros</h3>
+          <h3 class="text-lg font-bold text-[#1E2B55] dark:text-[#A7BFD4] font-heading">No encontramos productos con esos filtros</h3>
           <p class="text-sm text-ink-muted dark:text-slate-400">Probá modificando las palabras clave o seleccionando otra categoría.</p>
         </div>
       `;

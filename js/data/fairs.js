@@ -18,7 +18,7 @@ export const FAIRS_DATA = [
     registeredCount: 32,
     services: ['Baños públicos', 'Patio gastronómico', 'Puesto de salud', 'Seguridad barrial', 'Estacionamiento libre'],
     description: 'La feria más tradicional de Banda Norte. Reúne a familias y jóvenes cada fin de semana con puestos de mates, cerámicas, textiles y plantas.',
-    coverImage: 'imagenes/banner.png',
+    coverImage: 'imagenes/ferias/feria_parque_sarmiento.jpg',
     price: 'Gratis',
     time: '16:00',
     organizerId: 'org-1',
@@ -28,7 +28,7 @@ export const FAIRS_DATA = [
     id: 'feria-2',
     name: 'Centro Cultural del Andino',
     tagline: 'Cultura ferroviaria, diseño local y gastronomía',
-    locationName: 'Rio Cuarto, Cordoba',
+    locationName: 'Centro Cultural El Andino (Bv. Ameghino y Las Heras)',
     time: '16:00',
     price: '10.000$',
     zone: 'Macrocentro / Estación',
@@ -62,7 +62,6 @@ export const FAIRS_DATA = [
     registeredCount: 22,
     services: ['Punto verde de reciclaje', 'Agua potable', 'Sombra natural', 'Biciestacionamiento'],
     description: 'Espacio dedicado a la producción agroecológica local: verduras frescas, miel de monte, conservas sin conservantes y cosmética natural libre de químicos.',
-    locationName: 'Rio Cuarto, Cordoba',
     coverImage: 'imagenes/ferias/mercado_urbano.jpg',
     organizerId: 'org-2',
     organizerName: 'Red Agroecológica del Río'
@@ -82,13 +81,11 @@ export const FAIRS_DATA = [
     registeredCount: 28,
     services: ['Seguridad peatonal', 'Cercanía a bancos y paradas', 'Iluminación LED reforzada'],
     description: 'Edición especial de microemprendedores urbanos en pleno centro comercial y financiero de Río Cuarto.',
-    name: 'Centro Cultural del Andino',
-    time: '16:00',
-    price: '10.000$',
-    locationName: 'Rio Cuarto, Cordoba',
-    coverImage: 'imagenes/ferias/feria_andino.jpg',
+    time: '10:00',
+    price: 'Gratis',
+    coverImage: 'imagenes/ferias/plaza_roca.jpg',
     organizerId: 'org-1',
-    organizerName: 'Coordinación Municipal de Cultura'
+    organizerName: 'Secretaría de Desarrollo Económico'
   },
   {
     id: 'feria-5',
@@ -105,7 +102,9 @@ export const FAIRS_DATA = [
     registeredCount: 29,
     services: ['Juegos infantiles cercanos', 'Baños químicos', 'Toldos comunitarios', 'Música en vivo'],
     description: 'Encuentro popular que fortalece los lazos de los vecinos de Alberdi con tejidos, panificados caseros, repostería criolla y artesanías en madera.',
-    coverImage: 'https://images.unsplash.com/photo-1543083477-4f785aeafaa9?auto=format&fit=crop&w=1200&q=80',
+    time: '15:30',
+    price: 'Gratis',
+    coverImage: 'imagenes/ferias/barrio_alberdi.jpg',
     organizerId: 'org-3',
     organizerName: 'Vecinal Barrio Alberdi'
   },
@@ -124,7 +123,9 @@ export const FAIRS_DATA = [
     registeredCount: 16,
     services: ['Estacionamiento amplio', 'Senderos naturales', 'Patio de mates', 'Contenedores ecológicos'],
     description: 'Paseo de fin de semana en uno de los espejos de agua más lindos de Río Cuarto. Cerámica gres, encuadernación botánica y pastelería artesanal.',
-    coverImage: 'https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1200&q=80',
+    time: '14:00',
+    price: 'Gratis',
+    coverImage: 'imagenes/ferias/lago_villa_dalcar.jpg',
     organizerId: 'org-2',
     organizerName: 'Red Agroecológica del Río'
   }

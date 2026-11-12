@@ -10,29 +10,39 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#4E7B8C',
-          dark: '#3D6675',
-          light: '#6B96A8'
+          DEFAULT: '#506580', // Azul Musgo Pálido
+          dark: '#1E2B55',    // Azul Marino Profundo
+          light: '#7994A6'    // Azul Medio Polvoriento
         },
         accent: {
-          DEFAULT: '#E05A2B',
-          hover: '#C4471B',
-          light: '#F27A52'
+          DEFAULT: '#B58120', // Acento de Latón Dorado (WCAG AA accesible con blanco)
+          hover: '#9A6C17',   // Latón intenso hover
+          light: '#D7C393'    // Acento de Latón claro (muestra exacta de paleta)
+        },
+        brass: {
+          DEFAULT: '#D7C393', // Acento de Latón Metal Satinado
+          dark: '#B58120',
+          light: '#E8DCBD'
         },
         sand: {
-          DEFAULT: '#D4BC94',
-          light: '#E6D7BE',
-          dark: '#BCA073'
+          DEFAULT: '#D7C6AD', // Arena Suave
+          light: '#EAE1D3',
+          dark: '#BFAB8F'
         },
         cream: {
-          DEFAULT: '#E5EEF3',
-          light: '#F0F5F8',
-          dark: '#D6E4ED'
+          DEFAULT: '#E2EBF1', // Color Principal: Azul Pálido
+          light: '#F0F5F9',
+          dark: '#CFDFEA'
+        },
+        moss: {
+          DEFAULT: '#869F8A', // Verde Musgo Pálido
+          dark: '#5C725D',    // Acento Satin Metal Verde
+          light: '#AEC0B1'
         },
         ink: {
-          DEFAULT: '#1F2733',
-          muted: '#4B5563',
-          light: '#6B7280'
+          DEFAULT: '#1E2B55', // Azul Marino Profundo (tinta de lectura)
+          muted: '#506580',   // Azul Musgo Pálido (subtítulos)
+          light: '#7994A6'    // Azul Medio Polvoriento (íconos y detalles)
         }
       },
       fontFamily: {

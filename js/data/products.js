@@ -19,12 +19,12 @@ export const PRODUCTS_DATA = [
     merchantId: 'emp-feriando-ando',
     merchantName: 'FeriandoAndo',
     fairId: 'feria-1',
-    category: 'Joyería y Accesorios',
-    name: 'Conjunto Corazon',
+    category: 'Joyería y Metales',
+    name: 'Conjunto Corazón de Cuarzo Rosa',
     price: 8000,
     stock: 15,
     isPromoted: true,
-    description: 'Conjunto artesanal con dije corazón de cuarzo rosa engarzado y cadena hipoalergénica de acero.',
+    description: 'Conjunto artesanal con dije corazón de cuarzo rosa engarzado y cadena hipoalergénica de acero quirúrgico.',
     image: 'imagenes/productos/conjunto_corazon.jpg',
     tags: ['joyeria', 'accesorios', 'cuarzo', 'corazon']
   },
@@ -33,42 +33,42 @@ export const PRODUCTS_DATA = [
     merchantId: 'emp-feriando-ando',
     merchantName: 'FeriandoAndo',
     fairId: 'feria-1',
-    category: 'Joyería y Accesorios',
-    name: 'Conjunto Corazon',
-    price: 8000,
+    category: 'Joyería y Metales',
+    name: 'Pulsera de Piedras Naturales y Malaquita',
+    price: 6500,
     stock: 10,
     isPromoted: true,
-    description: 'Conjunto artesanal con dije corazón de piedra natural pulida.',
-    image: 'imagenes/productos/conjunto_corazon.jpg',
-    tags: ['joyeria', 'accesorios', 'corazon']
+    description: 'Pulsera artesanal confeccionada con cuentas pulidas de malaquita natural y detalle de broche bañado.',
+    image: 'imagenes/productos/pulsera_artesanal.jpg',
+    tags: ['joyeria', 'accesorios', 'pulsera', 'malaquita']
   },
   {
     id: 'prod-corazon-3',
     merchantId: 'emp-feriando-ando',
     merchantName: 'FeriandoAndo',
     fairId: 'feria-1',
-    category: 'Joyería y Accesorios',
-    name: 'Conjunto Corazon',
-    price: 8000,
+    category: 'Joyería y Metales',
+    name: 'Aros Colgantes de Cristal y Piedra Natural',
+    price: 7200,
     stock: 8,
     isPromoted: true,
-    description: 'Conjunto artesanal con dije corazón y cadena de acero quirúrgico.',
-    image: 'imagenes/productos/conjunto_corazon.jpg',
-    tags: ['joyeria', 'accesorios', 'corazon']
+    description: 'Aros artesanales de fiesta con piedras facetadas en tono zafiro y engarce antialérgico liviano.',
+    image: 'imagenes/productos/aros_artesanales.jpg',
+    tags: ['joyeria', 'accesorios', 'aros', 'cristal']
   },
   {
     id: 'prod-corazon-4',
     merchantId: 'emp-feriando-ando',
     merchantName: 'FeriandoAndo',
     fairId: 'feria-1',
-    category: 'Joyería y Accesorios',
-    name: 'Conjunto Corazon',
-    price: 8000,
+    category: 'Joyería y Metales',
+    name: 'Gargantilla con Dije Facetado de Cristal',
+    price: 7800,
     stock: 12,
     isPromoted: true,
-    description: 'Conjunto artesanal con dije corazón de cuarzo y cadena.',
-    image: 'imagenes/productos/conjunto_corazon.jpg',
-    tags: ['joyeria', 'accesorios', 'corazon']
+    description: 'Gargantilla delicada con dije facetado verde esmeralda engarzado en bisel dorado y cadena fina.',
+    image: 'imagenes/productos/gargantilla_facetada.jpg',
+    tags: ['joyeria', 'accesorios', 'gargantilla', 'collar']
   },
   // Emp-1: Mates del Imperio (feria-1)
   {
@@ -442,7 +442,7 @@ export const PRODUCTS_DATA = [
     stock: 7,
     isPromoted: false,
     description: 'Medidas: 50cm x 30cm x 4cm espesor. Curada con cera de abejas y aceite mineral comestible.',
-    image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80',
+    image: 'imagenes/productos/tabla_parrillera.jpg',
     tags: ['tabla', 'asado', 'algarrobo']
   },
   {
@@ -498,7 +498,7 @@ export const PRODUCTS_DATA = [
     stock: 8,
     isPromoted: false,
     description: '6 compartimentos internos con tapa bisagrada de vidrio para visualizar las hebras.',
-    image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80',
+    image: 'imagenes/productos/caja_te.jpg',
     tags: ['caja', 'te']
   },
 
@@ -514,7 +514,7 @@ export const PRODUCTS_DATA = [
     stock: 12,
     isPromoted: false,
     description: 'Técnica japonesa de cultivo en bola de musgo vivo con hilo de yute. Fácil mantenimiento en interiores.',
-    image: 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=800&q=80',
+    image: 'imagenes/productos/kokedama.jpg',
     tags: ['kokedama', 'helecho', 'plantas']
   },
   {
@@ -642,7 +642,7 @@ export const PRODUCTS_DATA = [
     stock: 12,
     isPromoted: false,
     description: 'Elaboración tradicional con almendras tostadas, nueces serranas y aroma a azahar.',
-    image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80',
+    image: 'imagenes/productos/pan_dulce.jpg',
     tags: ['pandulce', 'reposteria']
   },
 
@@ -758,7 +758,7 @@ export const PRODUCTS_DATA = [
     stock: 7,
     isPromoted: false,
     description: 'Estructura anillada oculta que abre a 360 grados para cocinar cómodamente sin cerrarse.',
-    image: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80',
+    image: 'imagenes/productos/recetario_cocina.jpg',
     tags: ['recetario', 'cocina']
   },
   {
@@ -786,7 +786,7 @@ export const PRODUCTS_DATA = [
     stock: 20,
     isPromoted: false,
     description: 'Tamaño pasaporte (10x15cm), papel reciclado de caña de azúcar libre de cloro.',
-    image: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80',
+    image: 'imagenes/productos/libretas_bolsillo.jpg',
     tags: ['libretas', 'pack']
   },
 
@@ -916,7 +916,7 @@ export const PRODUCTS_DATA = [
     stock: 9,
     isPromoted: false,
     description: 'Sabor intenso y textura quebradiza con corteza negra natural encerada.',
-    image: 'https://images.unsplash.com/photo-1452195100486-9cc805987862?auto=format&fit=crop&w=800&q=80',
+    image: 'imagenes/productos/queso_sardo.jpg',
     tags: ['queso', 'sardo']
   },
   {

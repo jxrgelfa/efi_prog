@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Panel de Comprador — FeriaZone</title>
+  <!-- Favicon / Icono del tabulador del navegador -->
+  <link rel="icon" type="image/png" href="../../images/logo.png">
+  <link rel="apple-touch-icon" href="../../images/logo.png">
+  <link rel="shortcut icon" href="../../favicon.ico">
   
   <script>
     (function() {
@@ -21,7 +25,7 @@
 
   <link rel="stylesheet" href="../../css/styles.css">
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-accent selection:text-white bg-[#E5EEF3] dark:bg-[#151D24] text-ink dark:text-white transition-colors">
+<body class="min-h-screen flex flex-col justify-between selection:bg-accent selection:text-white bg-[#E2EBF1] dark:bg-[#121A2C] text-ink dark:text-white transition-colors">
 
   <div id="navbar-placeholder"></div>
 
@@ -45,7 +49,7 @@
         <img id="user-avatar" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=300&q=80" alt="Usuario" class="w-16 h-16 rounded-2xl object-cover border-2 border-accent shadow-sm">
         <div>
           <span class="text-xs font-bold text-accent uppercase tracking-wider">Panel del Vecino Comprador</span>
-          <h1 id="user-name" class="text-2xl sm:text-3xl font-black text-[#3D6675] dark:text-[#9EC3D5] font-heading"></h1>
+          <h1 id="user-name" class="text-2xl sm:text-3xl font-black text-[#1E2B55] dark:text-[#A7BFD4] font-heading"></h1>
           <p id="user-email" class="text-xs text-ink-muted dark:text-slate-400"></p>
         </div>
       </div>
@@ -57,7 +61,7 @@
           </svg>
           <span>Volver al Inicio</span>
         </a>
-        <a href="../catalogo.html" class="btn-accent text-xs py-2.5 px-4 font-bold shadow-sm">
+        <a href="../tienda.html" class="btn-accent text-xs py-2.5 px-4 font-bold shadow-sm">
           Ir a la Tienda
         </a>
       </div>
@@ -65,7 +69,7 @@
 
     <!-- SECCIÓN: Historial de Pedidos -->
     <section class="space-y-4">
-      <h2 class="text-xl font-bold text-[#3D6675] dark:text-[#9EC3D5] font-heading">
+      <h2 class="text-xl font-bold text-[#1E2B55] dark:text-[#A7BFD4] font-heading">
         Mis Pedidos Realizados
       </h2>
       <div id="orders-list-container" class="space-y-3">
@@ -76,7 +80,7 @@
     <!-- SECCIÓN: Dejar Reseña -->
     <section class="card-surface p-6 sm:p-8 space-y-6 border border-sand/40 max-w-2xl">
       <div>
-        <h2 class="text-xl font-bold text-[#3D6675] dark:text-[#9EC3D5] font-heading">
+        <h2 class="text-xl font-bold text-[#1E2B55] dark:text-[#A7BFD4] font-heading">
           Dejar una Reseña de Producto o Feria
         </h2>
         <p class="text-xs text-ink-muted dark:text-slate-400 mt-1">
@@ -162,8 +166,8 @@
           <div class="card-surface p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border border-sand/30">
             <div class="space-y-1">
               <div class="flex items-center gap-2">
-                <span class="font-bold text-sm text-[#3D6675] dark:text-[#9EC3D5] font-heading">Orden: ${ord.id}</span>
-                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300">${ord.status}</span>
+                <span class="font-bold text-sm text-[#1E2B55] dark:text-[#A7BFD4] font-heading">Orden: ${ord.id}</span>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-moss/20 text-moss-dark dark:bg-moss/30 dark:text-moss-light">${ord.status}</span>
               </div>
               <p class="text-xs text-ink-muted dark:text-slate-400">Fecha: ${ord.date} · ${ord.pickupMethod || 'Retiro acordado'}</p>
               <ul class="text-xs text-ink dark:text-slate-200 mt-2 list-disc list-inside">

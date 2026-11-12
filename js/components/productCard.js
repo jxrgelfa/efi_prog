@@ -40,6 +40,7 @@ export function renderProductCard(product, relativePrefix = './') {
         alt="${product.name}" 
         loading="lazy"
         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        onerror="this.onerror=null; if(this.src.includes('imagenes/')) { this.src=this.src.replace('imagenes/', 'images/'); } else { this.src='${rootPrefix}images/logo.png'; }"
       >
     </div>
 
@@ -49,7 +50,7 @@ export function renderProductCard(product, relativePrefix = './') {
         <a href="${pagesPrefix}emprendimiento.html?id=${product.merchantId}" class="text-xs text-accent hover:underline font-semibold uppercase tracking-wider block mb-1">
           ${product.merchantName}
         </a>
-        <h3 class="text-base sm:text-lg font-bold text-[#3D6675] dark:text-[#9EC3D5] font-heading line-clamp-2 leading-snug group-hover:text-accent transition-colors">
+        <h3 class="text-base sm:text-lg font-bold text-[#1E2B55] dark:text-[#A7BFD4] font-heading line-clamp-2 leading-snug group-hover:text-accent transition-colors">
           <a href="${pagesPrefix}producto.html?id=${product.id}">
             ${product.name}
           </a>
@@ -63,7 +64,7 @@ export function renderProductCard(product, relativePrefix = './') {
       <div class="mt-4 pt-3 border-t border-sand/30 dark:border-slate-700/60 flex items-center justify-between">
         <div>
           <span class="text-xs text-ink-light dark:text-slate-400 block font-medium">Precio</span>
-          <span class="text-lg sm:text-xl font-extrabold text-[#3D6675] dark:text-[#9EC3D5] font-heading">
+          <span class="text-lg sm:text-xl font-extrabold text-[#1E2B55] dark:text-[#A7BFD4] font-heading">
             ${formatCurrency(product.price)}
           </span>
         </div>

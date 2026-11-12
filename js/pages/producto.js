@@ -23,9 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
           </svg>
         </div>
-        <h2 class="text-2xl font-bold text-[#3D6675] dark:text-[#9EC3D5] font-heading">Producto no encontrado</h2>
+        <h2 class="text-2xl font-bold text-[#1E2B55] dark:text-[#A7BFD4] font-heading">Producto no encontrado</h2>
         <p class="text-sm text-ink-muted dark:text-slate-300">El producto que estás buscando no existe o fue dado de baja por el feriante.</p>
-        <a href="./catalogo.html" class="btn-accent inline-block">Volver a la Tienda</a>
+        <a href="./tienda.html" class="btn-accent inline-block">Volver a la Tienda</a>
       </div>
     `;
     return;
@@ -46,9 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
     <nav class="flex items-center space-x-2 text-xs text-ink-light dark:text-slate-400 mb-6">
       <a href="../index.html" class="hover:text-accent">Inicio</a>
       <span>/</span>
-      <a href="./catalogo.html" class="hover:text-accent">Tienda</a>
+      <a href="./tienda.html" class="hover:text-accent">Tienda</a>
       <span>/</span>
-      <span class="text-[#3D6675] dark:text-[#9EC3D5] font-medium truncate max-w-xs">${product.name}</span>
+      <span class="text-[#1E2B55] dark:text-[#A7BFD4] font-medium truncate max-w-xs">${product.name}</span>
     </nav>
 
     <!-- Ficha Principal de Producto -->
@@ -57,7 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
       <!-- Columna Izquierda: Imagen y Badges -->
       <div class="lg:col-span-6 space-y-4">
         <div class="relative rounded-3xl overflow-hidden bg-sand/20 border border-sand/40 dark:border-slate-800 shadow-md">
-          <img src="${product.image}" alt="${product.name}" class="w-full h-80 sm:h-[450px] object-cover">
+          <img 
+            src="${product.image.startsWith('http') ? product.image : `../${product.image.replace(/^\.\//, '')}`}" 
+            alt="${product.name}" 
+            class="w-full h-80 sm:h-[450px] object-cover"
+            onerror="this.onerror=null; if(this.src.includes('imagenes/')) { this.src=this.src.replace('imagenes/', 'images/'); } else { this.src='../images/logo.png'; }"
+          >
           ${product.isPromoted ? `
             <span class="absolute top-4 left-4 bg-accent text-white font-bold text-xs px-3 py-1.5 rounded-full shadow-md inline-flex items-center gap-1.5">
               <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20">
@@ -86,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </span>
           </div>
 
-          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-black text-[#3D6675] dark:text-[#9EC3D5] font-heading leading-tight">
+          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-black text-[#1E2B55] dark:text-[#A7BFD4] font-heading leading-tight">
             ${product.name}
           </h1>
 
@@ -103,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
           <!-- Descripción completa -->
           <div class="space-y-2">
-            <h3 class="text-sm font-bold text-[#3D6675] dark:text-[#9EC3D5] font-heading uppercase tracking-wider">Descripción del producto</h3>
+            <h3 class="text-sm font-bold text-[#1E2B55] dark:text-[#A7BFD4] font-heading uppercase tracking-wider">Descripción del producto</h3>
             <p class="text-sm sm:text-base text-ink-muted dark:text-slate-300 leading-relaxed">
               ${product.description}
             </p>
@@ -141,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <img src="${merchant.avatar}" alt="${merchant.name}" class="w-12 h-12 rounded-xl object-cover border border-sand">
               <div>
                 <span class="text-xs text-ink-light dark:text-slate-400">Elaborado por</span>
-                <h4 class="font-bold text-sm text-[#3D6675] dark:text-[#9EC3D5] font-heading">${merchant.name}</h4>
+                <h4 class="font-bold text-sm text-[#1E2B55] dark:text-[#A7BFD4] font-heading">${merchant.name}</h4>
                 <p class="text-xs text-accent">${merchant.neighborhood}</p>
               </div>
             </div>
@@ -168,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <section class="mt-16 pt-12 border-t border-sand/30 dark:border-slate-800 space-y-6">
       <div class="flex items-center justify-between">
         <div>
-          <h3 class="text-2xl font-bold text-[#3D6675] dark:text-[#9EC3D5] font-heading">Opiniones de compradores</h3>
+          <h3 class="text-2xl font-bold text-[#1E2B55] dark:text-[#A7BFD4] font-heading">Opiniones de compradores</h3>
           <p class="text-xs text-ink-muted dark:text-slate-400">Reseñas de vecinos que ya probaron este producto.</p>
         </div>
       </div>

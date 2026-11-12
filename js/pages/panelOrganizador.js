@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <td class="p-3.5 text-accent font-medium">${f.schedule}</td>
         <td class="p-3.5">${f.registeredCount} / ${f.capacity}</td>
         <td class="p-3.5">
-          <span class="px-2 py-0.5 rounded-full text-[10px] font-bold ${f.status === 'activa' ? 'bg-emerald-100 text-emerald-700' : 'bg-primary/20 text-primary'}">
+          <span class="px-2 py-0.5 rounded-full text-[10px] font-bold ${f.status === 'activa' ? 'bg-moss/20 text-moss-dark dark:bg-moss/30 dark:text-moss-light' : 'bg-primary/20 text-primary'}">
             ${f.status === 'activa' ? 'Pública' : 'Borrador'}
           </span>
         </td>
@@ -52,8 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
   renderTable();
 
   // Inicializar mapa de selección con clic (Leaflet)
+  let pickerMap = null;
   if (window.L) {
-    const pickerMap = L.map('org-picker-map').setView([-33.123, -64.349], 13);
+    pickerMap = L.map('org-picker-map').setView([-33.123, -64.349], 13);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '© OpenStreetMap'
@@ -69,6 +70,81 @@ document.addEventListener('DOMContentLoaded', () => {
       showToast(`Punto fijado: ${lat.toFixed(4)}, ${lng.toFixed(4)}`, 'info');
     });
   }
+
+  // Configurar secciones colapsables (abiertas por default)
+  function setupCollapsibleSection({ btnId, containerId, headerId, onExpand }) {
+    const btn = document.getElementById(btnId);
+    const container = document.getElementById(containerId);
+    const header = headerId ? document.getElementById(headerId) : null;
+    if (!btn || !container) return;
+
+    const hasBorder = header?.classList.contains('border-b');
+
+    const toggle = () => {
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      const newExpanded = !isExpanded;
+
+      btn.setAttribute('aria-expanded', String(newExpanded));
+      const textSpan = btn.querySelector('.toggle-text');
+      const icon = btn.querySelector('svg');
+
+      if (newExpanded) {
+        container.classList.remove('hidden');
+        if (textSpan) textSpan.textContent = 'Minimizar';
+        if (icon) icon.classList.add('rotate-180');
+        if (header && hasBorder) {
+          header.classList.add('border-b', 'border-sand/30', 'pb-3');
+        }
+        if (typeof onExpand === 'function') {
+          onExpand();
+        }
+      } else {
+        container.classList.add('hidden');
+        if (textSpan) textSpan.textContent = 'Expandir';
+        if (icon) icon.classList.remove('rotate-180');
+        if (header && hasBorder) {
+          header.classList.remove('border-b', 'border-sand/30', 'pb-3');
+        }
+      }
+    };
+
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggle();
+    });
+
+    if (header) {
+      header.classList.add('cursor-pointer', 'select-none');
+      header.addEventListener('click', () => {
+        toggle();
+      });
+    }
+  }
+
+  setupCollapsibleSection({
+    btnId: 'toggle-fairs-btn',
+    containerId: 'fairs-table-container',
+    headerId: 'fairs-header'
+  });
+
+  setupCollapsibleSection({
+    btnId: 'toggle-form-btn',
+    containerId: 'fair-form-container',
+    headerId: 'create-fair-header',
+    onExpand: () => {
+      setTimeout(() => {
+        if (pickerMap) {
+          pickerMap.invalidateSize();
+        }
+      }, 50);
+    }
+  });
+
+  setupCollapsibleSection({
+    btnId: 'toggle-support-btn',
+    containerId: 'support-form-container',
+    headerId: 'support-header'
+  });
 
   // Guardar nueva feria
   document.getElementById('fair-form')?.addEventListener('submit', (e) => {

@@ -6,8 +6,8 @@
 
 const HERO_SLIDES = [
   {
-    image: 'imagenes/banner.png',
-    fallbackImage: 'images/banner.jpg',
+    image: 'imagenes/ferias/feria_parque_sarmiento.jpg',
+    fallbackImage: 'images/ferias/feria_parque_sarmiento.jpg',
     badge: 'Gratis',
     titleMobile: 'Feria del Parque',
     titleDesktop: 'Feria del Parque Sarmiento',
@@ -32,18 +32,18 @@ const HERO_SLIDES = [
     titleMobile: 'Mercado Urbano',
     titleDesktop: 'Mercado Urbano El Andino',
     date: '17/10',
-    location: 'Banda Norte',
+    location: 'Costanera Sur',
     link: './pages/feria.html?id=feria-3'
   },
   {
-    image: 'https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=1600&q=80',
-    fallbackImage: 'https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=1600&q=80',
-    badge: 'Agroecológica',
-    titleMobile: 'Feria de la Costa',
-    titleDesktop: 'Feria Verde de la Costanera',
+    image: 'imagenes/ferias/plaza_roca.jpg',
+    fallbackImage: 'images/ferias/plaza_roca.jpg',
+    badge: 'Urbana',
+    titleMobile: 'Plaza Roca Emprende',
+    titleDesktop: 'Paseo Plaza Roca Emprende',
     date: '18/10',
-    location: 'Costanera Sur',
-    link: './pages/ferias.html'
+    location: 'Centro',
+    link: './pages/feria.html?id=feria-4'
   }
 ];
 

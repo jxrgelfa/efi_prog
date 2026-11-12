@@ -14,7 +14,7 @@
 /
 ├── index.html                  # Landing page (Home) con ferias y productos destacados
 ├── pages/
-│   ├── catalogo.html           # Catálogo con buscador, filtros y ordenamiento
+│   ├── tienda.html             # Tienda con buscador, filtros y ordenamiento
 │   ├── producto.html           # Vista individual de producto (?id=...)
 │   ├── emprendimiento.html     # Perfil público del feriante / emprendimiento (?id=...)
 │   ├── ferias.html             # Listado de ferias activas, próximas y pasadas

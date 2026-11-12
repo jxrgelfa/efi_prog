@@ -37,15 +37,18 @@ npm install
 
 ---
 
-## 🎨 Paleta de Colores Oficial
+## 🎨 Paleta de Colores Oficial (8 Tonos)
 
-| Token | Hex | Uso |
+| Token | Hex | Tono / Uso |
 |---|---|---|
-| `primary` | `#3F4E63` | Azul pizarra (navbar, títulos, acentos institucionales) |
-| `accent` | `#B8654A` | Terracota (botones primarios, badges de productos destacados, llamadas a la acción) |
-| `sand` | `#D4BC94` | Beige arena (bordes de tarjetas, fondos cálidos suaves) |
-| `cream` | `#F5EFE6` | Crema (fondo principal en modo claro) |
-| `ink` | `#1F2733` | Tinta oscura (texto principal en modo claro) |
+| `cream` (Color Principal) | `#E2EBF1` | **Azul Pálido**: Fondo general de páginas en modo claro y barras superiores |
+| `primary.DEFAULT` | `#506580` | **Azul Musgo Pálido**: Identidad de marca, botones secundarios, acentos de tarjeta |
+| `primary.dark` / `ink` | `#1E2B55` | **Azul Marino Profundo**: Títulos (h1..h6), pie de página, texto de alto contraste |
+| `primary.light` | `#7994A6` | **Azul Medio Polvoriento**: Subtítulos, detalles sutiles, bordes suaves |
+| `sand` | `#D7C6AD` | **Arena Suave**: Bordes de tarjetas, fondos cálidos suaves y divisores |
+| `accent` / `brass` | `#B58120` / `#D7C393` | **Acento de Latón**: Botones de acción (CTA), badges destacados, estrellas de reseña |
+| `moss.DEFAULT` | `#869F8A` | **Verde Musgo Pálido**: Categorías ecológicas y estados activos |
+| `moss.dark` (Satin Metal) | `#5C725D` | **Acento y Latón Lopo Satin Metal**: Badges terrosos y acentos de contraste |
 
 ---
 
@@ -62,7 +65,7 @@ feriazone/
 │   └── directiva_feriazone.md
 ├── index.html                   # Página principal (Home)
 ├── pages/                       # Pantallas del sitio
-│   ├── catalogo.html
+│   ├── tienda.html
 │   ├── producto.html
 │   ├── emprendimiento.html
 │   ├── ferias.html

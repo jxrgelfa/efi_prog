@@ -23,13 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
       card.setAttribute('aria-checked', isSelected);
 
       if (isSelected) {
-        card.className = 'role-card bg-white/95 dark:bg-slate-800 border-2 border-[#4E7B8C] ring-2 ring-[#4E7B8C]/30 rounded-2xl p-4 sm:p-4.5 flex items-center justify-between cursor-pointer transition-all duration-200 select-none shadow-sm';
+        card.className = 'role-card bg-white/95 dark:bg-slate-800 border-2 border-primary ring-2 ring-primary/30 rounded-2xl p-4 sm:p-4.5 flex items-center justify-between cursor-pointer transition-all duration-200 select-none shadow-sm';
         if (indicator) {
-          indicator.className = 'radio-indicator flex-shrink-0 w-6 h-6 rounded-full border-2 border-[#4E7B8C] bg-white flex items-center justify-center transition-all';
+          indicator.className = 'radio-indicator flex-shrink-0 w-6 h-6 rounded-full border-2 border-primary bg-white flex items-center justify-center transition-all';
         }
         if (dot) dot.classList.remove('hidden');
       } else {
-        card.className = 'role-card bg-[#D6E4ED]/80 dark:bg-slate-800/80 hover:bg-[#CADDE7] dark:hover:bg-slate-800 border-2 border-transparent rounded-2xl p-4 sm:p-4.5 flex items-center justify-between cursor-pointer transition-all duration-200 select-none shadow-2xs';
+        card.className = 'role-card bg-[#E2EBF1]/60 dark:bg-slate-800/80 hover:bg-[#E2EBF1] dark:hover:bg-slate-800 border-2 border-transparent rounded-2xl p-4 sm:p-4.5 flex items-center justify-between cursor-pointer transition-all duration-200 select-none shadow-2xs';
         if (indicator) {
           indicator.className = 'radio-indicator flex-shrink-0 w-6 h-6 rounded-full border-2 border-slate-400 bg-white flex items-center justify-center transition-all';
         }

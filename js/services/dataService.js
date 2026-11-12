@@ -15,11 +15,39 @@ class DataService {
   }
 
   _initSeeds() {
-    if (!storage.get(PRODUCTS_KEY)) {
+    const existingProducts = storage.get(PRODUCTS_KEY);
+    if (!existingProducts) {
       storage.set(PRODUCTS_KEY, PRODUCTS_DATA);
+    } else {
+      // Sincronizar productos base para asegurar que todos tengan su imagen y datos actualizados sin duplicados
+      const mergedProducts = PRODUCTS_DATA.map(seedProd => {
+        const found = existingProducts.find(p => p.id === seedProd.id);
+        if (!found) return seedProd;
+        return {
+          ...found,
+          ...seedProd,
+          stock: found.stock !== undefined ? found.stock : seedProd.stock
+        };
+      });
+      const customProducts = existingProducts.filter(p => !PRODUCTS_DATA.some(sp => sp.id === p.id));
+      storage.set(PRODUCTS_KEY, [...mergedProducts, ...customProducts]);
     }
-    if (!storage.get(FAIRS_KEY)) {
+    const existingFairs = storage.get(FAIRS_KEY);
+    if (!existingFairs) {
       storage.set(FAIRS_KEY, FAIRS_DATA);
+    } else {
+      // Sincronizar ferias base para asegurar que todas tengan su imagen propia
+      const mergedFairs = FAIRS_DATA.map(seedFair => {
+        const found = existingFairs.find(f => f.id === seedFair.id);
+        if (!found) return seedFair;
+        return {
+          ...found,
+          ...seedFair,
+          status: found.status || seedFair.status
+        };
+      });
+      const customFairs = existingFairs.filter(f => !FAIRS_DATA.some(sf => sf.id === f.id));
+      storage.set(FAIRS_KEY, [...mergedFairs, ...customFairs]);
     }
     if (!storage.get(REVIEWS_KEY)) {
       storage.set(REVIEWS_KEY, REVIEWS_DATA);

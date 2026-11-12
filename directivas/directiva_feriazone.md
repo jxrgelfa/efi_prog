@@ -17,12 +17,14 @@ El proyecto es 100% frontend estático, con simulación de roles, carrito, CRUD 
 ## 3. Lógica y Reglas de Arquitectura
 - **Modularidad:** ES Modules nativos (`import`/`export`).
 - **Componentes compartidos:** `navbar.js` y `footer.js` inyectados dinámicamente en cada página para evitar duplicación.
-- **Tokens de Color:**
-  - `primary`: `#3F4E63` (Azul pizarra)
-  - `accent`: `#B8654A` (Terracota)
-  - `sand`: `#D4BC94` (Beige arena)
-  - `cream`: `#F5EFE6` (Crema fondo claro)
-  - `ink`: `#1F2733` (Tinta texto)
+- **Tokens de Color (Paleta Oficial de 8 Tonos):**
+  - `cream` (Color Principal): `#E2EBF1` (Azul pálido / fondo claro)
+  - `primary`: `#506580` (Azul musgo pálido / marca y botones secundarios)
+  - `primary.dark` / `ink`: `#1E2B55` (Azul marino profundo / títulos y tinta de texto)
+  - `primary.light`: `#7994A6` (Azul medio polvoriento)
+  - `sand`: `#D7C6AD` (Arena suave)
+  - `accent` / `brass`: `#B58120` / `#D7C393` (Acento de latón dorado / llamados a la acción)
+  - `moss`: `#869F8A` (Verde musgo pálido) y `#5C725D` (Acento Satin Metal Verde)
 - **Tema Claro / Oscuro:** Controlado por clase `.dark` en la etiqueta `<html>`, detectando preferencia del sistema y recordando elección con script inline previo al renderizado para eliminar parpadeos (FOUC).
 - **Accesibilidad y Legibilidad al Sol:** Contraste mínimo WCAG AA, botones con alto mínimo de 44px, tipografía base >= 16px.
 

@@ -39,11 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const marker = L.marker([fair.lat, fair.lng]).addTo(map);
     marker.bindPopup(`
       <div style="font-family: inherit; font-size: 13px; max-width: 200px;">
-        <strong style="color: #3D6675;">${fair.name}</strong><br>
-        <span style="color: #4E7B8C; font-weight: 600;">${pinSvg}${fair.zone}</span><br>
+        <strong style="color: #1E2B55;">${fair.name}</strong><br>
+        <span style="color: #506580; font-weight: 600;">${pinSvg}${fair.zone}</span><br>
         <span style="font-size: 11px; color: #666;">${fair.schedule}</span><br>
         <div style="margin-top: 6px;">
-          <a href="./feria.html?id=${fair.id}" style="color: #4E7B8C; font-weight: bold; text-decoration: underline;">Ver ficha completa</a>
+          <a href="./feria.html?id=${fair.id}" style="color: #B58120; font-weight: bold; text-decoration: underline;">Ver ficha completa</a>
         </div>
       </div>
     `);
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Marcador del usuario con SVG de silueta
         const userIcon = L.divIcon({
           className: 'user-marker',
-          html: '<div style="background-color: #4E7B8C; color: white; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);"><svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg></div>',
+          html: '<div style="background-color: #1E2B55; color: white; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);"><svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg></div>',
           iconSize: [28, 28]
         });
 

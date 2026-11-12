@@ -16,40 +16,26 @@ export function renderFeaturedMerchants(containerId = 'featured-merchants-contai
   const rootPrefix = isDeepLevel ? '../../' : isInsidePages ? '../' : './';
   const pagesPrefix = isDeepLevel ? '../' : isInsidePages ? './' : './pages/';
 
-  // Feriantes de referencia con rutas verificadas
-  const priorityFeriantes = [
-    {
-      id: 'emp-feriando-ando',
-      name: 'FeriandoAndo',
-      avatar: `${rootPrefix}imagenes/feriantes/feriando_ando.jpg`,
-      fallback: `${rootPrefix}images/feriantes/feriando_ando.jpg`
-    },
-    {
-      id: 'emp-feria-root',
-      name: 'Feria Root',
-      avatar: `${rootPrefix}imagenes/feriantes/feria_root.jpg`,
-      fallback: `${rootPrefix}images/feriantes/feria_root.jpg`
-    },
-    {
-      id: 'emp-festival-chic',
-      name: 'Festival Chic',
-      avatar: `${rootPrefix}imagenes/feriantes/festival_chic.jpg`,
-      fallback: `${rootPrefix}images/feriantes/festival_chic.jpg`
-    },
-    {
-      id: 'emp-croca-cafe',
-      name: 'Croca Cafe',
-      avatar: `${rootPrefix}imagenes/feriantes/croca_cafe.jpg`,
-      fallback: `${rootPrefix}images/feriantes/croca_cafe.jpg`
-    }
-  ];
+  // Obtener emprendedores registrados sin repetir ninguno
+  const allMerchants = dataService.getMerchants();
+  const priorityIds = ['emp-feriando-ando', 'emp-feria-root', 'emp-festival-chic', 'emp-croca-cafe'];
 
-  // Secuencia de feriantes repetida para dar la sensación de carrusel continuo
+  // Priorizar los feriantes insignia y sumar el resto sin duplicaciones
   const displayList = [
-    ...priorityFeriantes,
-    ...priorityFeriantes,
-    ...priorityFeriantes
-  ];
+    ...allMerchants.filter(m => priorityIds.includes(m.id)),
+    ...allMerchants.filter(m => !priorityIds.includes(m.id))
+  ].map(m => {
+    const avatar = m.avatar.startsWith('http') 
+      ? m.avatar 
+      : `${rootPrefix}${m.avatar.replace(/^\.\//, '')}`;
+    const fallback = `${rootPrefix}images/logo.png`;
+    return {
+      id: m.id,
+      name: m.name,
+      avatar,
+      fallback
+    };
+  });
 
   const itemsHtml = displayList.map((m) => `
     <a 
@@ -84,7 +70,7 @@ export function renderFeaturedMerchants(containerId = 'featured-merchants-contai
   <div class="space-y-3 sm:space-y-4">
     <!-- Encabezado de Sección -->
     <div class="flex items-center justify-between">
-      <h2 class="text-xl sm:text-2xl md:text-3xl font-black text-[#3D6675] dark:text-[#9EC3D5] font-heading tracking-tight">
+      <h2 class="text-xl sm:text-2xl md:text-3xl font-black text-[#1E2B55] dark:text-[#A7BFD4] font-heading tracking-tight">
         Feriantes Destacados
       </h2>
       

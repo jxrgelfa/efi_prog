@@ -5,6 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiénes Somos — FeriaZone (Equipo EFI 2026)</title>
+  <!-- Favicon / Icono del tabulador del navegador -->
+  <link rel="icon" type="image/png" href="../images/logo.png">
+  <link rel="apple-touch-icon" href="../images/logo.png">
+  <link rel="shortcut icon" href="../favicon.ico">
 
   <script>
     (function () {
@@ -24,7 +28,7 @@
 </head>
 
 <body
-  class="min-h-screen flex flex-col justify-between selection:bg-accent selection:text-white bg-[#E5EEF3] dark:bg-[#151D24] text-ink dark:text-white transition-colors">
+  class="min-h-screen flex flex-col justify-between selection:bg-accent selection:text-white bg-[#E2EBF1] dark:bg-[#121A2C] text-ink dark:text-white transition-colors">
 
   <!-- Navbar inyectada -->
   <div id="navbar-placeholder"></div>
@@ -32,230 +36,239 @@
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 flex-grow w-full space-y-12 sm:space-y-16">
 
     <!-- Encabezado sutil 2D en fondo blanco -->
-    <div class="text-center max-w-3xl mx-auto space-y-2">
+    <div class="text-center max-w-3xl mx-auto space-y-3">
       <span class="text-xs font-bold text-accent uppercase tracking-widest">
-        Examen Final Integrador — Programación II
+        Instituto Tecnológico Río Cuarto · Programación II (2026)
       </span>
-      <h1 class="text-3xl sm:text-5xl font-black text-[#3D6675] dark:text-[#9EC3D5] font-heading">
+      <h1 class="text-3xl sm:text-5xl font-black text-[#1E2B55] dark:text-[#A7BFD4] font-heading">
         El Equipo Detrás de FeriaZone
       </h1>
-      <p class="text-sm sm:text-base text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
-        Somos un equipo de 5 estudiantes del ITEC Río Cuarto comprometidos con impulsar la visibilidad digital de los
-        artesanos y emprendedores locales.
+      <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
+        Trabajo Práctico EFI — Docente a cargo: <strong>Prof. Mauricio Sambrenil</strong>.<br>
+        Tecnicatura Superior en Desarrollo de Software.
       </p>
     </div>
 
     <!-- ======================================================== -->
     <!-- 5 INTEGRANTES: DISEÑO 2D PLANO DIRECTAMENTE EN LA PÁGINA -->
-    <!-- Sin cards, sin sombras, fondo blanco puro (#FFFFFF)     -->
+    <!-- Sin cards, sin sombras, fondo limpio                    -->
     <!-- En Desktop: fila de 3 arriba y fila de 2 centrados abajo -->
     <!-- En Mobile: columna vertical centrada                     -->
     <!-- ======================================================== -->
     <div class="flex flex-wrap justify-center gap-12 sm:gap-14 lg:gap-16 max-w-6xl mx-auto pt-4 sm:pt-6">
 
       <!-- ======================================================== -->
-      <!-- INTEGRANTE 1                                              -->
-      <!-- Foto: images/equipo/integrante1.png                      -->
+      <!-- INTEGRANTE 1: JORGE FERNANDEZ                            -->
       <!-- ======================================================== -->
       <article
         class="w-full sm:w-[calc(50%-2rem)] lg:w-[calc(33.333%-2.75rem)] max-w-xs flex flex-col items-center text-center">
         <!-- Foto circular plana 2D directamente en la página -->
-        <div class="w-44 h-44 sm:w-52 sm:h-52 rounded-full overflow-hidden mx-auto bg-gray-100 dark:bg-slate-800">
-          <img src="../images/equipo/integrante1.jpeg" alt="Foto Integrante 1" class="w-full h-full object-cover"
+        <div class="w-44 h-44 sm:w-52 sm:h-52 rounded-full overflow-hidden mx-auto bg-gray-100 dark:bg-slate-800 border-2 border-sand/40 shadow-xs">
+          <img src="../images/equipo/integrante1.jpeg" alt="Foto Jorge Fernandez" class="w-full h-full object-cover"
             onerror="this.onerror=null; this.src='../images/equipo/integrante1.jpg'; this.onerror=function(){this.src='../images/equipo/integrante1.svg';};">
         </div>
 
-        <!-- Bloque 2D con Rol en lugar de 'Contacto' -->
-        <div class="mt-6 space-y-1 w-full">
+        <div class="mt-6 space-y-1.5 w-full">
           <span class="text-xs font-bold text-accent dark:text-sand-light tracking-widest uppercase block mb-1">
             DESARROLLO FRONTEND
           </span>
-          <p class="text-base text-gray-900 dark:text-gray-100 font-normal">
-            Rio Cuarto, Argentina
+          <h2 class="text-lg sm:text-xl font-bold text-[#1E2B55] dark:text-white font-heading">
+            Jorge Fernandez
+          </h2>
+          <p class="text-sm text-gray-700 dark:text-gray-200 font-normal">
+            Río Cuarto, Córdoba
           </p>
-          <p class="text-base text-gray-900 dark:text-gray-100 font-normal">
+          <p class="text-sm text-gray-700 dark:text-gray-200 font-normal">
             <a href="tel:+543585703953" class="hover:text-accent transition-colors">
               +54 358 570-3953
             </a>
           </p>
-          <p class="text-base text-gray-900 dark:text-gray-100 font-normal">
+          <p class="text-sm text-gray-700 dark:text-gray-200 font-normal">
             <a href="mailto:l.fernandez@itecriocuarto.org.ar" class="hover:text-accent transition-colors break-all">
               l.fernandez@itecriocuarto.org.ar
             </a>
           </p>
 
           <div
-            class="flex items-center justify-center gap-6 pt-3 text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-normal">
-            <a href="#" target="_blank" rel="noopener noreferrer"
+            class="flex items-center justify-center gap-6 pt-2 text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-normal">
+            <a href="https://instagram.com/feriazone.rc" target="_blank" rel="noopener noreferrer"
               class="hover:text-accent hover:underline transition-colors">Instagram</a>
-            <a href="#" target="_blank" rel="noopener noreferrer"
+            <a href="https://facebook.com/FeriaZoneRioCuarto" target="_blank" rel="noopener noreferrer"
               class="hover:text-accent hover:underline transition-colors">Facebook</a>
-            <a href="#" target="_blank" rel="noopener noreferrer"
-              class="hover:text-accent hover:underline transition-colors">Twitter</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+              class="hover:text-accent hover:underline transition-colors">LinkedIn</a>
           </div>
         </div>
       </article>
 
       <!-- ======================================================== -->
-      <!-- INTEGRANTE 2                                              -->
-      <!-- Foto: images/equipo/integrante2.png (o .jpg / .svg)      -->
+      <!-- INTEGRANTE 2: BRISA MARTOCCIO                            -->
       <!-- ======================================================== -->
       <article
         class="w-full sm:w-[calc(50%-2rem)] lg:w-[calc(33.333%-2.75rem)] max-w-xs flex flex-col items-center text-center">
-        <div class="w-44 h-44 sm:w-52 sm:h-52 rounded-full overflow-hidden mx-auto bg-gray-100 dark:bg-slate-800">
-          <img src="../images/equipo/integrante3.jpeg" alt="Foto Integrante 2" class="w-full h-full object-cover"
+        <div class="w-44 h-44 sm:w-52 sm:h-52 rounded-full overflow-hidden mx-auto bg-gray-100 dark:bg-slate-800 border-2 border-sand/40 shadow-xs">
+          <img src="../images/equipo/integrante3.jpeg" alt="Foto Brisa Martoccio" class="w-full h-full object-cover"
             onerror="this.onerror=null; this.src='../images/equipo/integrante2.jpg'; this.onerror=function(){this.src='../images/equipo/integrante2.svg';};">
         </div>
 
-        <div class="mt-6 space-y-1 w-full">
+        <div class="mt-6 space-y-1.5 w-full">
           <span class="text-xs font-bold text-accent dark:text-sand-light tracking-widest uppercase block mb-1">
-            DISEÑO UI / UX
+            DISEÑO UX / UI
           </span>
-          <p class="text-base text-gray-900 dark:text-gray-100 font-normal">
-            Rio Cuarto, Argentina
+          <h2 class="text-lg sm:text-xl font-bold text-[#1E2B55] dark:text-white font-heading">
+            Brisa Martoccio
+          </h2>
+          <p class="text-sm text-gray-700 dark:text-gray-200 font-normal">
+            Río Cuarto, Córdoba
           </p>
-          <p class="text-base text-gray-900 dark:text-gray-100 font-normal">
-            <a href="tel:+543580000002" class="hover:text-accent transition-colors">
-              +54 358 000-0002
+          <p class="text-sm text-gray-700 dark:text-gray-200 font-normal">
+            <a href="tel:+543584123890" class="hover:text-accent transition-colors">
+              +54 358 412-3890
             </a>
           </p>
-          <p class="text-base text-gray-900 dark:text-gray-100 font-normal">
-            <a href="mailto:integrante2@itecriocuarto.org.ar" class="hover:text-accent transition-colors break-all">
-              integrante2@itecriocuarto.org.ar
+          <p class="text-sm text-gray-700 dark:text-gray-200 font-normal">
+            <a href="mailto:b.martoccio@itecriocuarto.org.ar" class="hover:text-accent transition-colors break-all">
+              b.martoccio@itecriocuarto.org.ar
             </a>
           </p>
 
           <div
-            class="flex items-center justify-center gap-6 pt-3 text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-normal">
-            <a href="#" target="_blank" rel="noopener noreferrer"
+            class="flex items-center justify-center gap-6 pt-2 text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-normal">
+            <a href="https://instagram.com/feriazone.rc" target="_blank" rel="noopener noreferrer"
               class="hover:text-accent hover:underline transition-colors">Instagram</a>
-            <a href="#" target="_blank" rel="noopener noreferrer"
+            <a href="https://facebook.com/FeriaZoneRioCuarto" target="_blank" rel="noopener noreferrer"
               class="hover:text-accent hover:underline transition-colors">Facebook</a>
-            <a href="#" target="_blank" rel="noopener noreferrer"
-              class="hover:text-accent hover:underline transition-colors">Twitter</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+              class="hover:text-accent hover:underline transition-colors">LinkedIn</a>
           </div>
         </div>
       </article>
 
       <!-- ======================================================== -->
-      <!-- INTEGRANTE 3                                              -->
-      <!-- Foto: images/equipo/integrante3.png (o .jpg / .svg)      -->
+      <!-- INTEGRANTE 3: AGUSTIN SOSA                               -->
       <!-- ======================================================== -->
       <article
         class="w-full sm:w-[calc(50%-2rem)] lg:w-[calc(33.333%-2.75rem)] max-w-xs flex flex-col items-center text-center">
-        <div class="w-44 h-44 sm:w-52 sm:h-52 rounded-full overflow-hidden mx-auto bg-gray-100 dark:bg-slate-800">
-          <img src="../images/equipo/integrante2.jpeg" alt="Foto Integrante 3" class="w-full h-full object-cover"
+        <div class="w-44 h-44 sm:w-52 sm:h-52 rounded-full overflow-hidden mx-auto bg-gray-100 dark:bg-slate-800 border-2 border-sand/40 shadow-xs">
+          <img src="../images/equipo/integrante2.jpeg" alt="Foto Agustin Sosa" class="w-full h-full object-cover"
             onerror="this.onerror=null; this.src='../images/equipo/integrante3.jpg'; this.onerror=function(){this.src='../images/equipo/integrante3.svg';};">
         </div>
 
-        <div class="mt-6 space-y-1 w-full">
+        <div class="mt-6 space-y-1.5 w-full">
           <span class="text-xs font-bold text-accent dark:text-sand-light tracking-widest uppercase block mb-1">
             LÓGICA & CATÁLOGO
           </span>
-          <p class="text-base text-gray-900 dark:text-gray-100 font-normal">
-            Rio Cuarto, Argentina
+          <h2 class="text-lg sm:text-xl font-bold text-[#1E2B55] dark:text-white font-heading">
+            Agustin Sosa
+          </h2>
+          <p class="text-sm text-gray-700 dark:text-gray-200 font-normal">
+            Río Cuarto, Córdoba
           </p>
-          <p class="text-base text-gray-900 dark:text-gray-100 font-normal">
-            <a href="tel:+543580000003" class="hover:text-accent transition-colors">
-              +54 358 000-0003
+          <p class="text-sm text-gray-700 dark:text-gray-200 font-normal">
+            <a href="tel:+543584123890" class="hover:text-accent transition-colors">
+              +54 358 412-3890
             </a>
           </p>
-          <p class="text-base text-gray-900 dark:text-gray-100 font-normal">
-            <a href="mailto:integrante3@itecriocuarto.org.ar" class="hover:text-accent transition-colors break-all">
-              integrante3@itecriocuarto.org.ar
+          <p class="text-sm text-gray-700 dark:text-gray-200 font-normal">
+            <a href="mailto:a.sosa@itecriocuarto.org.ar" class="hover:text-accent transition-colors break-all">
+              a.sosa@itecriocuarto.org.ar
             </a>
           </p>
 
           <div
-            class="flex items-center justify-center gap-6 pt-3 text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-normal">
-            <a href="#" target="_blank" rel="noopener noreferrer"
+            class="flex items-center justify-center gap-6 pt-2 text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-normal">
+            <a href="https://instagram.com/feriazone.rc" target="_blank" rel="noopener noreferrer"
               class="hover:text-accent hover:underline transition-colors">Instagram</a>
-            <a href="#" target="_blank" rel="noopener noreferrer"
+            <a href="https://facebook.com/FeriaZoneRioCuarto" target="_blank" rel="noopener noreferrer"
               class="hover:text-accent hover:underline transition-colors">Facebook</a>
-            <a href="#" target="_blank" rel="noopener noreferrer"
-              class="hover:text-accent hover:underline transition-colors">Twitter</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+              class="hover:text-accent hover:underline transition-colors">LinkedIn</a>
           </div>
         </div>
       </article>
 
       <!-- ======================================================== -->
-      <!-- INTEGRANTE 4                                              -->
-      <!-- Foto: images/equipo/integrante4.png (o .jpg / .svg)      -->
+      <!-- INTEGRANTE 4: TOMAS MALUF                                -->
       <!-- ======================================================== -->
       <article
         class="w-full sm:w-[calc(50%-2rem)] lg:w-[calc(33.333%-2.75rem)] max-w-xs flex flex-col items-center text-center">
-        <div class="w-44 h-44 sm:w-52 sm:h-52 rounded-full overflow-hidden mx-auto bg-gray-100 dark:bg-slate-800">
-          <img src="../images/equipo/integrante4.jpeg" alt="Foto Integrante 4" class="w-full h-full object-cover"
+        <div class="w-44 h-44 sm:w-52 sm:h-52 rounded-full overflow-hidden mx-auto bg-gray-100 dark:bg-slate-800 border-2 border-sand/40 shadow-xs">
+          <img src="../images/equipo/integrante4.jpeg" alt="Foto Tomas Maluf" class="w-full h-full object-cover"
             onerror="this.onerror=null; this.src='../images/equipo/integrante4.jpg'; this.onerror=function(){this.src='../images/equipo/integrante4.svg';};">
         </div>
 
-        <div class="mt-6 space-y-1 w-full">
+        <div class="mt-6 space-y-1.5 w-full">
           <span class="text-xs font-bold text-accent dark:text-sand-light tracking-widest uppercase block mb-1">
             GEOLOCALIZACIÓN & FERIAS
           </span>
-          <p class="text-base text-gray-900 dark:text-gray-100 font-normal">
-            Rio Cuarto, Argentina
+          <h2 class="text-lg sm:text-xl font-bold text-[#1E2B55] dark:text-white font-heading">
+            Tomas Maluf
+          </h2>
+          <p class="text-sm text-gray-700 dark:text-gray-200 font-normal">
+            Río Cuarto, Córdoba
           </p>
-          <p class="text-base text-gray-900 dark:text-gray-100 font-normal">
-            <a href="tel:+543580000004" class="hover:text-accent transition-colors">
-              +54 358 000-0004
+          <p class="text-sm text-gray-700 dark:text-gray-200 font-normal">
+            <a href="tel:+543584123890" class="hover:text-accent transition-colors">
+              +54 358 412-3890
             </a>
           </p>
-          <p class="text-base text-gray-900 dark:text-gray-100 font-normal">
-            <a href="mailto:integrante4@itecriocuarto.org.ar" class="hover:text-accent transition-colors break-all">
-              integrante4@itecriocuarto.org.ar
+          <p class="text-sm text-gray-700 dark:text-gray-200 font-normal">
+            <a href="mailto:t.maluf@itecriocuarto.org.ar" class="hover:text-accent transition-colors break-all">
+              t.maluf@itecriocuarto.org.ar
             </a>
           </p>
 
           <div
-            class="flex items-center justify-center gap-6 pt-3 text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-normal">
-            <a href="#" target="_blank" rel="noopener noreferrer"
+            class="flex items-center justify-center gap-6 pt-2 text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-normal">
+            <a href="https://instagram.com/feriazone.rc" target="_blank" rel="noopener noreferrer"
               class="hover:text-accent hover:underline transition-colors">Instagram</a>
-            <a href="#" target="_blank" rel="noopener noreferrer"
+            <a href="https://facebook.com/FeriaZoneRioCuarto" target="_blank" rel="noopener noreferrer"
               class="hover:text-accent hover:underline transition-colors">Facebook</a>
-            <a href="#" target="_blank" rel="noopener noreferrer"
-              class="hover:text-accent hover:underline transition-colors">Twitter</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+              class="hover:text-accent hover:underline transition-colors">LinkedIn</a>
           </div>
         </div>
       </article>
 
       <!-- ======================================================== -->
-      <!-- INTEGRANTE 5                                              -->
-      <!-- Foto: images/equipo/integrante5.png (o .jpg / .svg)      -->
+      <!-- INTEGRANTE 5: SANTIAGO BIANCHI                           -->
       <!-- ======================================================== -->
       <article
         class="w-full sm:w-[calc(50%-2rem)] lg:w-[calc(33.333%-2.75rem)] max-w-xs flex flex-col items-center text-center">
-        <div class="w-44 h-44 sm:w-52 sm:h-52 rounded-full overflow-hidden mx-auto bg-gray-100 dark:bg-slate-800">
-          <img src="../images/equipo/integrante5.jpeg" alt="Foto Integrante 5" class="w-full h-full object-cover"
+        <div class="w-44 h-44 sm:w-52 sm:h-52 rounded-full overflow-hidden mx-auto bg-gray-100 dark:bg-slate-800 border-2 border-sand/40 shadow-xs">
+          <img src="../images/equipo/integrante5.jpeg" alt="Foto Santiago Bianchi" class="w-full h-full object-cover"
             onerror="this.onerror=null; this.src='../images/equipo/integrante5.jpg'; this.onerror=function(){this.src='../images/equipo/integrante5.svg';};">
         </div>
 
-        <div class="mt-6 space-y-1 w-full">
+        <div class="mt-6 space-y-1.5 w-full">
           <span class="text-xs font-bold text-accent dark:text-sand-light tracking-widest uppercase block mb-1">
             TESTING & QA
           </span>
-          <p class="text-base text-gray-900 dark:text-gray-100 font-normal">
-            Rio Cuarto, Argentina
+          <h2 class="text-lg sm:text-xl font-bold text-[#1E2B55] dark:text-white font-heading">
+            Santiago Bianchi
+          </h2>
+          <p class="text-sm text-gray-700 dark:text-gray-200 font-normal">
+            Río Cuarto, Córdoba
           </p>
-          <p class="text-base text-gray-900 dark:text-gray-100 font-normal">
-            <a href="tel:+543580000005" class="hover:text-accent transition-colors">
-              +54 358 000-0005
+          <p class="text-sm text-gray-700 dark:text-gray-200 font-normal">
+            <a href="tel:+543584123890" class="hover:text-accent transition-colors">
+              +54 358 412-3890
             </a>
           </p>
-          <p class="text-base text-gray-900 dark:text-gray-100 font-normal">
-            <a href="mailto:integrante5@itecriocuarto.org.ar" class="hover:text-accent transition-colors break-all">
-              integrante5@itecriocuarto.org.ar
+          <p class="text-sm text-gray-700 dark:text-gray-200 font-normal">
+            <a href="mailto:s.bianchi@itecriocuarto.org.ar" class="hover:text-accent transition-colors break-all">
+              s.bianchi@itecriocuarto.org.ar
             </a>
           </p>
 
           <div
-            class="flex items-center justify-center gap-6 pt-3 text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-normal">
-            <a href="#" target="_blank" rel="noopener noreferrer"
+            class="flex items-center justify-center gap-6 pt-2 text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-normal">
+            <a href="https://instagram.com/feriazone.rc" target="_blank" rel="noopener noreferrer"
               class="hover:text-accent hover:underline transition-colors">Instagram</a>
-            <a href="#" target="_blank" rel="noopener noreferrer"
+            <a href="https://facebook.com/FeriaZoneRioCuarto" target="_blank" rel="noopener noreferrer"
               class="hover:text-accent hover:underline transition-colors">Facebook</a>
-            <a href="#" target="_blank" rel="noopener noreferrer"
-              class="hover:text-accent hover:underline transition-colors">Twitter</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+              class="hover:text-accent hover:underline transition-colors">LinkedIn</a>
           </div>
         </div>
       </article>

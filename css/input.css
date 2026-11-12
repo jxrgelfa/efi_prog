@@ -12,16 +12,16 @@
   }
 
   body {
-    @apply bg-[#E5EEF3] dark:bg-[#151D24] text-ink dark:text-white transition-colors duration-200 antialiased;
+    @apply bg-[#E2EBF1] dark:bg-[#121A2C] text-ink dark:text-white transition-colors duration-200 antialiased;
   }
 
   html.dark body {
-    @apply bg-[#151D24] text-[#F3F4F6];
+    @apply bg-[#121A2C] text-[#F3F4F6];
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Outfit', sans-serif;
-    @apply tracking-tight text-[#3D6675] dark:text-[#9EC3D5];
+    @apply tracking-tight text-[#1E2B55] dark:text-[#A7BFD4];
   }
 
   /* Preservar texto blanco en banners fotográficos, hero carrusel, pie de página y tarjetas oscuras */
@@ -40,17 +40,17 @@
 }
 
 @layer components {
-  /* Títulos de marca en azul login/registro */
+  /* Títulos de marca en azul marino login/registro */
   .title-brand {
-    @apply text-[#3D6675] dark:text-[#9EC3D5];
+    @apply text-[#1E2B55] dark:text-[#A7BFD4];
   }
 
-  /* Botón de acción con acento cálido armonioso */
+  /* Botón de acción con acento cálido armonioso de latón */
   .btn-accent {
     @apply inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 rounded-xl font-medium text-white bg-accent hover:bg-accent-hover transition-all duration-150 active:scale-[0.98] shadow-sm;
   }
 
-  /* Botón secundario */
+  /* Botón secundario en azul musgo pálido / marino */
   .btn-primary {
     @apply inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 rounded-xl font-medium text-white bg-primary hover:bg-primary-dark transition-all duration-150 active:scale-[0.98] shadow-sm;
   }
@@ -62,7 +62,7 @@
 
   /* Tarjeta estándar */
   .card-surface {
-    @apply bg-white dark:bg-[#1E2633] border border-sand/40 dark:border-slate-700/60 rounded-2xl shadow-sm transition-all duration-200;
+    @apply bg-white dark:bg-[#182238] border border-sand/40 dark:border-slate-700/60 rounded-2xl shadow-sm transition-all duration-200;
   }
 
   /* Ocultar barra de scroll para carrusel táctil estilo Instagram */

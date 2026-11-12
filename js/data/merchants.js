@@ -22,9 +22,9 @@ export const MERCHANTS_DATA = [
       bgBanner: '#FDF0DC', // Fondo crema cálido
       bgBody: '#BFE0E2',   // Celeste/cyan pastel
       headerBg: '#BFE0E2',
-      accent: '#3D6675',
-      textPrimary: '#1E2E38',
-      textMuted: '#2D4552'
+      accent: '#506580',
+      textPrimary: '#1E2B55',
+      textMuted: '#506580'
     }
   },
   {

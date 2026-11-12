@@ -164,9 +164,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (applyList) {
     const fairs = dataService.getFairs();
     applyList.innerHTML = fairs.slice(0, 3).map(f => `
-      <div class="p-3.5 rounded-xl border border-sand/30 bg-[#E5EEF3] dark:bg-slate-800/50 flex items-center justify-between gap-3 text-xs">
+      <div class="p-3.5 rounded-xl border border-sand/30 bg-[#E2EBF1] dark:bg-slate-800/50 flex items-center justify-between gap-3 text-xs">
         <div>
-          <p class="font-bold text-[#3D6675] dark:text-[#9EC3D5] font-heading">${f.name}</p>
+          <p class="font-bold text-[#1E2B55] dark:text-[#A7BFD4] font-heading">${f.name}</p>
           <p class="text-ink-muted dark:text-slate-400 flex items-center gap-1 mt-0.5">
             <svg class="w-3.5 h-3.5 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="10" stroke-width="2"></circle>

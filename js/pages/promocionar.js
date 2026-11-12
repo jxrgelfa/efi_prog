@@ -18,11 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Render promociones activas
   if (ACTIVE_PROMOTIONS.length > 0) {
     activeContainer.innerHTML = ACTIVE_PROMOTIONS.map(p => `
-      <div class="p-4 rounded-2xl bg-[#E5EEF3] dark:bg-slate-800/60 border border-sand/30 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div class="p-4 rounded-2xl bg-[#E2EBF1] dark:bg-slate-800/60 border border-sand/30 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div class="space-y-1">
           <div class="flex items-center gap-2">
             <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-accent text-white uppercase">Activa</span>
-            <span class="font-bold text-sm text-[#3D6675] dark:text-[#9EC3D5] font-heading">Paquete: ${p.packageId}</span>
+            <span class="font-bold text-sm text-[#1E2B55] dark:text-[#A7BFD4] font-heading">Paquete: ${p.packageId}</span>
           </div>
           <p class="text-xs text-ink-muted dark:text-slate-400">Vigencia: ${p.startDate} al ${p.endDate} · <strong>${p.daysRemaining} días restantes</strong></p>
         </div>
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <article class="card-surface p-6 flex flex-col justify-between border border-sand/40 hover:shadow-lg transition-all space-y-6">
       <div class="space-y-3">
         <span class="text-xs font-bold text-accent uppercase tracking-wider block">Paquete de Visibilidad</span>
-        <h3 class="text-xl font-black text-[#3D6675] dark:text-[#9EC3D5] font-heading">${pkg.name}</h3>
+        <h3 class="text-xl font-black text-[#1E2B55] dark:text-[#A7BFD4] font-heading">${pkg.name}</h3>
         <p class="text-xs text-ink-muted dark:text-slate-300 leading-relaxed">${pkg.tagline}</p>
         
         <ul class="space-y-2 text-xs text-ink dark:text-slate-200 pt-2 border-t border-sand/20">

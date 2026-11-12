@@ -32,3 +32,17 @@ Este documento registra cronológicamente los avances, decisiones técnicas y re
   - Componentes compartidos modulares: `navbar.js` (con toggle de tema, badge de carrito y soporte mobile), `footer.js`, `productCard.js`, `fairCard.js` y `toast.js`.
   - Construcción y maquetación de 17 pantallas completas con Tailwind CSS y Leaflet: Home, Catálogo con filtros y ordenamiento, Detalle de producto, Perfil de emprendimiento, Listado y detalle de ferias, Mapa interactivo con geolocalización ("Feria más cercana a mí"), Carrito y Checkout simulado con número de orden, Login demo por roles, Registro, Panel de Usuario (historial y reseñas), Panel de Feriante (CRUD productos con límite de plan básico de 15 productos, métricas e inscripciones), Pantalla de contratación de promociones (`promocionar.html`), Panel de Organizador (creación de ferias con clic en mapa y soporte técnico), Planes, Quiénes somos y Contacto.
   - Verificación exitosa de compilación (`npm run build`) y respuesta HTTP 200 en las 17 rutas servidas por `live-server`.
+
+---
+
+## [Fase de Diseño] — Aplicación de la Nueva Paleta Oficial de 8 Tonos
+- **Fecha:** Noviembre 2026
+- **Estado:** ✅ Completada y Verificada
+- **Acciones Realizadas:**
+  - Análisis cromático y muestreo RGB/Hex de la paleta provista por el usuario (8 tonos artesanales armónicos).
+  - Actualización de los tokens en `tailwind.config.js` (`cream`: `#E2EBF1`, `primary`: `#506580` / `#1E2B55` / `#7994A6`, `accent`/`brass`: `#B58120` / `#D7C393`, `sand`: `#D7C6AD`, `moss`: `#869F8A` / `#5C725D`).
+  - Actualización de estilos base y componentes en `css/input.css` (`body`, `h1..h6`, `card-surface`, `btn-accent`, `btn-primary`, `btn-outline`).
+  - Reemplazo y unificación de clases de color hardcodeadas en las 17 páginas HTML, componentes (`navbar.js`, `fairCard.js`, `productCard.js`, `featuredMerchants.js`, `toast.js`) y módulos JS de páginas (`mapa.js`, `catalogo.js`, `carrito.js`, `producto.js`, `promocionar.js`, `panelFeriante.js`, `panelOrganizador.js`, `registro.js`).
+  - Verificación de contraste WCAG AA (> 4.5:1 para texto de botones y > 11:1 para encabezados azul marino profundo sobre fondo azul pálido).
+  - Compilación exitosa con Tailwind CLI minificado en `css/styles.css` y actualización de documentación (`README.md`, `REGLAS.md`, `directiva_feriazone.md`).
+
